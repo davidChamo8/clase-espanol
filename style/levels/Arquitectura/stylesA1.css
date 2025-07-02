@@ -1,11 +1,600 @@
 body {
-  background-color: #fcefe3;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #abbce4; 
+  margin: 0;
+  padding: 2rem;
 }
 
-h1 {
-  color: darkred;
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #abbce4; 
+  box-sizing: border-box;
+  position: relative;
+}
+
+.titulo-modulo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: #b3ddca; 
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #002b36;
+  font-weight: bold;
+  font-size: 1.5rem;
   text-align: center;
-  font-size: 3rem;
+}
+
+main {
+  padding-top: 4rem; 
+}
+
+/* INTRODUCCIÓN */
+.activity-title {
+  display: inline-block;
+  background-color: #b3ddca;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.intro-block {
+  background-color: #b3ddca; 
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.activity-block ul li {
+  margin-bottom: 1rem;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+#sagrada.imagen-lateral {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  border: none;
+}
+
+#introduccion p,
+#introduccion li {
+  line-height: 1.6;
+}
+
+/* ACTIVIDAD 1 */
+.activity-title {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.activity1-block {
+  background-color: #b3ddca;
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.activity1-block {
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  background-color: #b7c7e8;
+}
+
+#word-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#word-search-grid {
+  border-collapse: collapse;
+  background-color: #abbce4;
+}
+
+#word-search-grid td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #aaa;
+  text-align: center;
+  vertical-align: middle;
+  font-family: monospace;
+  font-size: 18px;
+  cursor: default;
+  border: 2px solid #444;
+  user-select: none;
+}
+
+td.selected {
+  background-color: #aee;
+}
+
+td.highlight {
+  background-color: #c2f0c2;
+  font-weight: bold;
+  color: #000;
+}
+
+td.wrong {
+  background-color: #f88 !important;
+  transition: background-color 0.3s;
+}
+
+/* ACTIVIDAD 2 */
+.activity2-block {
+  background-color: #b3ddca; 
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.activity2-block p {
+  margin-bottom: 1rem;
+}
+
+.activity2-content {
+  flex: 1;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.imagen-lateral {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #002b36;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: auto;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+#singular.modal-content {
+  background: white;
+  border-radius: 10px;
+  max-width: 60vw;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#singular.modal-content img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.zoom-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoom-container img {
+  transition: transform 0.3s ease;
+  max-width: none;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.gap {
+  font-weight: bold;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  background-color: #b7c7e8
+}
+
+#check-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #abbce4; 
+  color: #002b36;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 1rem auto 0 auto; 
+  display: block;            
+  float: none;
+}
+
+#check-btn:hover {
+  background-color: #7a91c6
+}
+
+/* ACTIVIDAD 3 */
+.activity3-block {
+  background-color: #b3ddca; 
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  gap: 3rem;     
+}
+
+.activity3-block .text-content {
+  max-width: 600px;
+  text-align: justify;
+}
+
+#goToLinkButton {
+  display: block;
+  margin: 2rem auto 0 auto; 
+  padding: 0.6rem 1.2rem;
+  background-color: #abbce4;
+  color: #002b36;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;  
+}
+
+#goToLinkButton:hover {
+  background-color: #5e76a8;
+}
+
+.info-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 8px;
+  color: #007BFF;
+}
+
+.info-icon:hover,
+.info-icon:focus {
+  color: #0056b3;
+  outline: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ACTIVIDAD 4 */
+.activity-title {
+  display: inline-block;
+  background-color: #b3ddca;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.activity4-block {
+  background-color: #b3ddca; 
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 300px;           
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-img {
+  width: 600px;
+  height: 300px;        
+  object-fit: cover;      
+  flex-shrink: 0;
+  display: block;         
+}
+
+.prev,
+.next,
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;          
+  padding: 0.25rem 0.5rem;   
+  width: 30px;              
+  height: 30px;           
+  border-radius: 4px;
+  z-index: 10;
+  color: black;         
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;   
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.activity-instruction {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* REFLEXIÓN */
+.activity-title {
+  display: inline-block;
+  background-color: #b3ddca;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #002b36;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.rflx-block {
+  background-color: #b3ddca; 
+  border: 2px solid #002b36;
+  padding: 2rem;
+  min-height: 200px;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  align-items: center;
+}
+
+.activity-block ul li {
+  margin-bottom: 1rem;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+#gracias.imagen-lateral {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #002b36;
+}
+
+.reflexion-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#external-link {
+  display: block;
+  margin: 2rem auto 0 auto; 
+  padding: 0.6rem 1.2rem;
+  background-color: #abbce4;
+  color: #002b36;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#external-link:hover {
+  background-color: #5e76a8;
+}
+
+.reflexion-content ul li {
+  margin-bottom: 1em;
+}
+
+.reflexion-content ul {
+  margin-bottom: 2em;
+}
+
+footer {
+  text-align: center;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: bold;
 }

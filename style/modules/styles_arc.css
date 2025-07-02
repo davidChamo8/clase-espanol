@@ -7,7 +7,7 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #abbce4;
   color: #002b36;
 }
 
@@ -32,7 +32,8 @@ body {
   border: 2px solid #002b36;
   padding: 2rem;
   text-align: center;
-  width: 100%; /* Coincide con los botones */
+  width: 100%;
+  background-color: #b3ddca
 }
 
 .logo-box h1 {
@@ -58,11 +59,11 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   color: #002b36;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  background-color: #b3ddca
 }
 
 .nivel:hover {
-  background-color: #002b36;
+  background-color: #7fb3a0;
   color: white;
   transform: scale(1.02);
 }

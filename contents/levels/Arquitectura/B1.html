@@ -1,13 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Arquitectura - B1</title>
+    <title>Arquitectura - B1/2</title>
     <meta charset="UTF-8">
     <meta author="David Chamorro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/levels/Arquitectura/stylesB1.css">
   </head>
   <body>
-    <h1>Prueba de estilo B1 - Arquitectura</h1>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Arquitectura - Nivel B1/2</h1>
+      <main>
+
+        <section id="introduccion">
+          <h2 class="activity-title">Entramos en el tema</h2>
+          <div class="intro-block">
+            <div class="activity-content">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te interesa la arquitectura?</li>
+                <li>¿Te gusta la arquitectura de Barcelona?</li>
+                <li>¿Qué monumentos o edificios te gustan más de la ciudad?</li>
+                <li>¿Has visitado el interior de la Sagrada Familia? ¿Cumplió tus expectativas?</li>
+                <li>¿Te recuerda a algún otro edificio?</li>
+                <li>¿Te parece el monumento más importante de España?</li>
+                <li>¿Cuál piensas que es el monumento más importante de tu país? ¿Por qué?</li>
+              </ul>
+            </div>
+            <img src="../../../images/basilica.png" alt="Sagrada Familia" id="sagrada" class="imagen-lateral">
+          </div>
+        </section>
+
+        <section id="actividad1">
+          <h2 class="activity-title">Actividad 1: Vocabulario arquitectónico</h2>
+          <div class="activity1-block">
+            <div class="match-container">
+              <div class="draggable-word-bank">
+                <div class="draggable" draggable="true" data-term="columna">Columna</div>
+                <div class="draggable" draggable="true" data-term="pinaculo">Pináculo</div>
+                <div class="draggable" draggable="true" data-term="arco">Arco</div>
+                <div class="draggable" draggable="true" data-term="escultura">Escultura</div>
+                <div class="draggable" draggable="true" data-term="relieve">Relieve</div>
+              </div>
+              <ol class="definition-list">
+                <li>
+                  Elemento decorativo y puntiagudo que corona las torres o fachadas del edificio.  
+                  <div class="drop-zone" data-answer="pinaculo"></div>
+                </li>
+                <li>
+                  Representación tridimensional de una figura, tallada en diferentes materiales.   
+                  <div class="drop-zone" data-answer="escultura"></div>
+                </li>
+                <li>
+                  Elemento arquitectónico vertical de soporte estructural, normalmente cilíndrico.  
+                  <div class="drop-zone" data-answer="columna"></div>
+                </li>
+                <li>
+                  Técnica artística donde las figuras talladas sobresalen de la superficie general.
+                  <div class="drop-zone" data-answer="relieve"></div>
+                </li>
+                <li>
+                  Estructura curva usada para cubrir un espacio y soportar una estructura superior. 
+                  <div class="drop-zone" data-answer="arco"></div>
+                </li>
+              </ol>
+              <div class="check-button-container centered">
+                <button id="check-answers" class="check-button">Comprobar respuestas</button>
+              </div>
+            </div>
+          </div>
+          <div id="info-modal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <h3 id="modal-title"></h3>
+              <img id="modal-image" alt="Ilustración del término">
+              <p id="modal-description"></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad2">
+          <h2 class="activity-title">Actividad 2: Historia del edificio</h2>
+          <div class="activity2-block">
+            <div class="bloque-imagen-glosario">
+              <div class="foto">
+                <img src="../../../images/1925.jpg" alt="Foto 1925" data-fecha="1925">
+                <p class="pie-imagen">1925</p>
+              </div>
+              <div class="glosario-ayuda">
+                <ul>
+                  <li>Torres: Primeras cuatro torres de los Apóstoles ya construidas.</li>
+                  <li>Fachada: Fachada del Nacimiento, ya decorada con esculturas religiosas y elementos simbólicos.</li>
+                  <li>Transepto: Todavía no construido, espacio transversal que cruza la nave principal.</li>
+                  <li>Campanario: Cada torre funciona como campanario, el dedicado al apóstol Bernabé fue el único que Gaudí pudo dejar terminado.</li>
+                  <li>Portal: Entrada inferior visible con decoración en relieve, representa escenas bíblicas.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bloque-imagen-glosario">
+              <div class="foto">
+                <img src="../../../images/1976.jpg" alt="Foto 1976" data-fecha="1976">
+                <p class="pie-imagen">1976</p>
+              </div>
+              <div class="glosario-ayuda">
+                <ul>
+                  <li>Fachada: Fachada de la Pasión en construcción.</li>
+                  <li>Pináculos: Remates en forma puntiaguda en lo alto de las torres.</li>
+                  <li>Rosetón: Ventana circular visible sobre la entrada de la primera fachada.</li>
+                  <li>Contrafuertes: Estructuras inclinadas en la parte inferior que sirven de refuerzo lateral al edificio.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bloque-imagen-glosario">
+              <div class="foto">
+                <img src="../../../images/1992.jpg" alt="Foto 1992" data-fecha="1992">
+                <p class="pie-imagen">1992</p>
+              </div>
+              <div class="glosario-ayuda">
+               <ul>
+                  <li>Presviterio: Espacio elevado al fondo donde se ubicará el altar.</li>
+                  <li>Ventanales: Aberturas por donde entra la luz natural, por ahora sin vidrieras.</li>
+                  <li>Columnas: Estructuras que sostendrán el peso del edificio.</li>
+                  <li>Transepto: Nave transversal que cruza el edificio principal.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bloque-imagen-glosario">
+              <div class="foto">
+                <img src="../../../images/2017.jpg" alt="Foto 2017" data-fecha="2017">
+                <p class="pie-imagen">2017</p>
+              </div>
+              <div class="glosario-ayuda">
+               <ul>
+                  <li>Piedra: En el estado de este material se puede apreciar el cambio de siglo.</li>
+                  <li>Árbol de la vida: Escultura que se encuentra por encima de la escena del nacimiento.</li>
+                  <li>Portales: Los tres portales (Esperanza, Caridad y Fé) completados en la fachada del Nacimiento.</li>
+                  <li>Vidrieras: Estructura decorativas de cristales de colores colocadas en los ventanales.</li>
+                  <li>Gabletes: Elemento arquitectónico que sirve como remate de forma triangular.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bloque-imagen-glosario">
+              <div class="foto">
+                <img src="../../../images/2025.jpg" alt="Foto 2025" data-fecha="2025">
+                <p class="pie-imagen">2025</p>
+              </div>
+              <div class="glosario-ayuda">
+                 <ul>
+                  <li>Pináculos: Todas las torres están decoradas en sus puntas.</li>
+                  <li>Esculturas: Se pueden obserbar las cuatro de los Evangelistas (animales) y la de María (estrella).</li>
+                  <li>Torres: Falta la central dedicada a Jesucrito, en un futuro coronada por una cruz.</li>
+                </ul>
+              </div>
+            </div>
+            <div id="imagen-modal" class="modal hidden">
+              <div class="modal-content">
+                <span class="close-button" id="cerrar-imagen-modal">&times;</span>
+                <div class="zoom-container">
+                  <img id="imagen-ampliada" src="" alt="Imagen ampliada">
+                </div>
+                <p id="pie-imagen" class="pie-imagen">Datación</p> 
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad3">
+          <h2 class="activity-title">Actividad 3: Enfrentamiento de fachadas</h2>
+          <div class="activity3-block">
+            <div class="activity3-content">
+              <p><strong>Responde a estas preguntas para hacer una comparación de las fachadas:</strong></p>
+              <ol>
+                <li>¿Qué representa cada una?</li>
+                <li>¿Qué formas predominan?</li>
+                <li>¿Qué esculturas, escenas o detalles se puede ver en ambas?</li>
+                <li>¿Qué orden estructural tienen?</li>
+                <li>¿Qué te hacen sentir?</li>
+                <li>¿Te parece el monumento más importante de España?</li>
+                <li>¿Cuál te gusta más? ¿Por qué?</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad4">
+          <h2 class="activity-title">Actividad 4: El interior del templo</h2>
+          <div class="activity4-block">
+            <div class="activity4-content">
+              <div class="word-bank">
+                <div data-term="escaleras">escaleras</div>
+                <div data-term="cabecera">cabecera</div>
+                <div data-term="capillas">capillas</div>
+                <div data-term="iglesia">iglesia</div>
+                <div data-term="cripta">cripta</div>
+                <div data-term="abside">ábside</div>
+              </div>
+              <p>El ábside es la parte más importante de una <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;">, pues es en él donde se sitúa el <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> que, en el caso de la Sagrada Familia, conectará simbólicamente con la torre de Jesús, que se alza justo sobre la bóveda del ábside. Ocupa la <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> del templo y es una de las pocas partes en las que todavía encontramos algunas reminiscencias neogóticas (la planta, la fachada y las capillas absidiales). Está situado justo encima de la <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> y comparte con esta la planta semicircular. <br>Consta de tres partes: el presbiterio, el deambulatorio que lo rodea y las siete <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> absidiales, con dos grandes <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> de caracol a cada lado que permiten el acceso a la cripta y a las torres centrales aún en construcción.</p>
+              <button id="check-btn">Comprobar respuestas</button>
+            </div>
+            <img src="../../../images/abside.png" alt="Ábside" class="imagen-lateral" id="imagen-activadora">
+            <div id="foto-modal" class="modal hidden">
+              <div id="singular" class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="zoom-container">
+                  <img id="modal-detalle" src="../../../images/abside_detalle.png" alt="Detalles del ábside">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="activity-title">Reflexión</h2>
+          <div class="rflx-block">
+            <div class="reflexion-wrapper">
+              <div class="reflexion-content">
+                <p><strong>Comenta estas últimas preguntas con tus compañero/as:</strong></p>
+                <ul>
+                  <li>Después de estas actividades, ¿te interesa más la Sagrada Familia?</li>
+                  <li>¿Te interesa aprender léxico relacinado con la arquitectura?</li>
+                  <li>¿En qué año piensas que se terminará la SagradaFamilia? ¿Irás a verla completada?</li>
+                </ul>
+                <p>Si hay más tiempo, podéis investigar los <strong>Cuadernos informativos</strong> de la página web</p>
+              </div>
+              <button id="external-link" onclick="window.open('https://sagradafamilia.org/es/los-cuadernos', '_blank')">Cuadernos informativos</button>
+            </div>
+            <img src="../../../images/gracias.png" alt="Despedida" id="gracias" class="imagen-lateral">
+          </div>
+        </section>
+
+      </main>
+      <footer>
+        <p>© Expanish - Spanish in the City</p>
+      </footer>
+    </div>
+    <script src="../../../scripts/Arquitectura/B1.js"></script>
   </body>
 </html>
