@@ -4,49 +4,49 @@ const carouselData = [
     image: '../../../images/puertas.png',
     options: ['Puertas', 'Ventanales', 'Escaleras'],
     correct: 'Puertas',
-    text: 'En la imagen podemos ver las X de la Caridad. En ellas hay flores, plantas y diferentes insectos.'
+    text: 'En la imagen podemos ver las __ de la Caridad. En ellas hay flores, plantas y diferentes insectos.'
   },
   {
     image: '../../../images/fachada.png',
     options: ['Decorado', 'Fachada', 'Casa'],
     correct: 'Fachada',
-    text: 'La X de la Pasión cuenta la historia de la muerte y resurección de Jesús.'
+    text: 'La __ de la Pasión cuenta la historia de la muerte y resurección de Jesús.'
   },
   {
     image: '../../../images/ventanal.png',
     options: ['Rosetón', 'Ventanal', 'Cristal'],
     correct: 'Ventanal',
-    text: 'Los X de la basílica son muy grandes y gracias a su vidriera la luz pasa con muchos colores.'
+    text: 'Los __ de la basílica son muy grandes y gracias a su vidriera la luz pasa con muchos colores.'
   },
   {
     image: '../../../images/torres.png',
     options: ['Torre', 'Edificio', 'Piso'],
     correct: 'Torre',
-    text: 'La X es una estructura muy alta con muchos detalles al final.'
+    text: 'La __ es una estructura muy alta con muchos detalles al final.'
   },
   {
     image: '../../../images/columna.png',
     options: ['Palo', 'Pilar', 'Columna'],
     correct: 'Columna',
-    text: 'X es un soporte vertical que soporta estructuras.'
+    text: '__ es un soporte vertical que soporta estructuras.'
   },
   {
     image: '../../../images/arco1.png',
     options: ['Arco', 'Puente', 'Marco'],
     correct: 'Arco',
-    text: 'El X es una estructura curva que soporta peso y permite el acceso.'
+    text: 'El __ es una estructura curva que soporta peso y permite el acceso.'
   },
   {
     image: '../../../images/planta.png',
     options: ['Piso', 'Planta', 'Suelo'],
     correct: 'Planta',
-    text: 'X son líneas que marcan las divisiones interiores del edificio, sus límites y su diseño.'
+    text: '__ son líneas que marcan las divisiones interiores del edificio, sus límites y su diseño.'
   },
   {
     image: '../../../images/escultura0.png',
     options: ['Piedra', 'Molde', 'Escultura'],
     correct: 'Escultura',
-    text: 'Estas X representan la escena de la captura de Jesús.'
+    text: 'Estas __ representan la escena de la captura de Jesús.'
   },
 ];
 
@@ -166,6 +166,7 @@ modal.addEventListener('click', e => {
 const photos = document.querySelectorAll('.photo');
 const dropZones = document.querySelectorAll('.drop-zone');
 
+// Habilitar el arrastre de las fotos
 photos.forEach(photo => {
   photo.addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -177,28 +178,43 @@ photos.forEach(photo => {
   });
 });
 
+// Habilitar la lógica de las zonas de soltado
 dropZones.forEach(zone => {
   zone.addEventListener('dragover', (e) => {
     e.preventDefault();
-    zone.style.backgroundColor = '#d3f4ff';
+    // No se cambia color aquí, para no interferir con correct/incorrect
   });
 
   zone.addEventListener('dragleave', () => {
-    zone.style.backgroundColor = '#f0f0f0';
+    // No se cambia color aquí, para no interferir con correct/incorrect
   });
 
   zone.addEventListener('drop', (e) => {
     e.preventDefault();
+    
     const photoId = e.dataTransfer.getData('text/plain');
     const photo = document.getElementById(photoId);
 
-    if (zone.firstChild && zone.firstChild !== zone.lastChild) {
-      // Already has a photo
-      return;
+    const correctPosition = photo.getAttribute('data-correct');
+    const currentPosition = zone.getAttribute('data-position');
+
+    // Eliminar imagen anterior si existe
+    const existingImg = zone.querySelector('img');
+    if (existingImg) {
+      existingImg.remove();
     }
 
-    zone.innerHTML = ''; // Remove number
+    // Colocar la nueva imagen
     zone.appendChild(photo);
-    zone.style.backgroundColor = '#f0f0f0';
+
+    // Limpiar clases previas
+    zone.classList.remove('correct', 'incorrect');
+
+    // Comprobar si es la posición correcta
+    if (correctPosition === currentPosition) {
+      zone.classList.add('correct');
+    } else {
+      zone.classList.add('incorrect');
+    }
   });
 });
