@@ -11,39 +11,168 @@
     <div class="contenedor">
       <h1 class="titulo-modulo">Gastronomía - Nivel A0</h1>
       <main>
-        <section>
-          <h2 class="activity-title">Entramos en materia</h2>
-          <div class="activity-block"></div>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="texto">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te gustan las verduras? ¿Cuál es tu favorita? ¿Y cuál odias?</li>
+                <li>¿Te gusta cocinar? ¿Eres bueno/a en la cocina?</li>
+                <li>¿Conoces los calçots? ¿Alguna vez has comido? ¿Te gustó?</li>
+                <li>¿Qué opinas de las tradicionales con comida?</li>
+                <li>¿En tu país hay alguna tradición gastronómica muy importante?</li>
+                <li>¿Conoces otras comidas tradicionales de Cataluña?</li>
+              </ul>
+            </div>
+            <div class="imagen">
+              <img src="../../../images/calcots.png" alt="Calçots">
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 1</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: ¿Qué son los calçots?</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="texto">
+              <p><strong>Mira este video para entender mejor qué son los calçots.</strong></p>
+            </div>
+            <div class="video">
+              <video controls width="100%" preload="metadata">
+              <source src="../../../images/esquema.mp4" type="video/mp4">
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 2</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: Juego de memoria</h2>
+          <div class="bloque-actividad actividad-2">
+            <p class="enunciado-actividad"><strong>Conecta cada palabra con su imagen correcta:</strong></p>
+            <div id="banco-palabras" class="banco-palabras"></div>
+            <div id="tablero"></div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 3</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Calçotada con Jordi</h2>
+          <div class="bloque-actividad actividad-3">
+            <p><strong>Ordena las imágenes en el orden correcto. Si lo haces bien, Jordi estará feliz.</strong></p>
+            <div class="feedback-hombre">
+              <img id="hombre" src="../../../images/serio.png" alt="Hombre serio">
+            </div>
+            <button onclick="verificarOrden()">Verificar</button>
+            <div class="contenedor-imagenes">
+              <img src="../../../images/calcot.png" draggable="true" id="calcot" class="draggable">
+              <img src="../../../images/fogata.png" draggable="true" id="fogata" class="draggable">
+              <img src="../../../images/salsa.png" draggable="true" id="salsa" class="draggable">
+              <img src="../../../images/servilleta.png" draggable="true" id="servilleta" class="draggable">
+            </div>
+            <div class="contenedor-huecos">
+              <div class="dropzone" data-index="0"></div>
+              <div class="dropzone" data-index="1"></div>
+              <div class="dropzone" data-index="2"></div>
+              <div class="dropzone" data-index="3"></div>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 4</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: Receta secreta</h2>
+          <div class="bloque-actividad actividad-4">
+            <p><strong>Adivina todos los ingredientes de la salsa Romesco:</strong></p>
+            <div class="actividad-contenedor">
+              <div class="actividad-imagen">
+                <h3><strong>INGREDIENTES</strong></h3>
+                <img src="../../../images/receta.png" alt="Ingredientes Romesco">
+              </div>
+              <div class="actividad-juego">
+                <canvas id="canvasAhorcado" width="200" height="200"></canvas>
+                <div id="palabra"></div>
+                <div id="letras"></div>
+                <p id="ahorcado">Intentos restantes: 6</p>
+                <p id="mensaje"></p>
+              </div>
+            </div>
+            <div class="actividad-boton"></div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Reflexión final</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Crea tu verdura</h2>
+          <div class="bloque-actividad actividad-5">
+            <p class="enunciado-actividad"><strong>Crea con tus compañeros/as una verdura siguiendo estos pasos:</strong></p>
+              <form class="formulario-verdura" autocomplete="off">
+                <div class="campo-form">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="campo-form">
+                  <label for="pais">País de origen:</label>
+                  <input type="text" id="pais" name="pais">
+                </div>
+                <div class="campo-form">
+                  <label>Sabor:</label>
+                  <div class="sabores">
+                    <label><input type="checkbox" name="sabor" value="dulce"> Dulce</label>
+                    <label><input type="checkbox" name="sabor" value="salado"> Salado</label>
+                    <label><input type="checkbox" name="sabor" value="amargo"> Amargo</label>
+                    <label><input type="checkbox" name="sabor" value="ácido"> Ácido</label>
+                    <label><input type="checkbox" name="sabor" value="picante"> Picante</label>
+                  </div>
+                </div>
+              </form>
+            <div class="pizarra-controles">
+              <canvas id="pizarra" width="600" height="400" style="border:1px solid #002b36; border-radius:8px; cursor: crosshair;"></canvas>
+              <div style="margin: 10px 0;">
+                <button id="modo-pincel">Pincel</button>
+                <button id="modo-bote">Bote de pintura</button>
+                <button id="borrar">Borrar</button>
+                <button id="guardar">Guardar dibujo</button>
+              </div>
+              <div style="margin: 10px 0;">
+              <span class="etiqueta-colores">Colores: </span>
+                <button class="color-btn" style="background: black;" data-color="#000000"></button>
+                <button class="color-btn" style="background: yellow;" data-color="#ffff00"></button>
+                <button class="color-btn" style="background: green;" data-color="#008000"></button>
+                <button class="color-btn" style="background: orange;" data-color="#ffa500"></button>
+                <button class="color-btn" style="background: purple;" data-color="#800080"></button>
+                <button class="color-btn" style="background: red;" data-color="#ff0000"></button>
+              </div>
+              <div id="galeria"></div>
+            </div>
+          </div>
         </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="texto">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te gustaría participar en una calçotada?</li>
+                <li>¿Son importante estas tradiciones?</li>
+              </ul>
+              <div class="actividad-palabras">
+                <p><strong>Escribe tres palabras nuevas:</strong></p>
+                <div class="campos-palabras">
+                  <input type="text" placeholder="Palabra 1" name="palabra1" required>
+                  <input type="text" placeholder="Palabra 2" name="palabra2" required>
+                  <input type="text" placeholder="Palabra 3" name="palabra3" required>
+                </div>
+              </div>
+            </div>
+            <div class="imagen">
+              <img src="../../../images/empachado.png" alt="Calçots">
+            </div>
+          </div>
+        </section>
+
       </main>
       <footer>
         <p>© Expanish - Spanish in the City</p>
       </footer>
     </div>
+    <script src="../../../scripts/Gastronomía/A0.js"></script>
   </body>
 </html>

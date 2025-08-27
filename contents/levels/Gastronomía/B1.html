@@ -11,39 +11,206 @@
     <div class="contenedor">
       <h1 class="titulo-modulo">Gastronomía - Nivel B1/2</h1>
       <main>
-        <section>
-          <h2 class="activity-title">Entramos en materia</h2>
-          <div class="activity-block"></div>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="texto">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te gustan las verduras? ¿Cuál es tu favorita? ¿Y cuál odias?</li>
+                <li>¿Te gusta cocinar? ¿Eres bueno/a en la cocina?</li>
+                <li>¿Conoces los calçots? ¿Alguna vez los has comido? ¿Te gustó?</li>
+                <li>¿Qué opinas de las tradicionales relacionadas con comida?</li>
+                <li>¿En tu país hay alguna tradición gastronómica muy importante?</li>
+                <li>Además de los calçots, ¿conoces otras comidas tradicionales de Cataluña?</li>
+              </ul>
+            </div>
+            <div class="imagen-intro">
+              <img src="../../../images/calcots.png" alt="Calçots">
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 1</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: ¿Qué son los calçots?</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="texto">
+              <p><strong>Mira este video para entender mejor qué son los calçots.</strong></p>
+            </div>
+            <div class="video">
+              <video controls width="100%" preload="metadata">
+              <source src="../../../images/esquema.mp4" type="video/mp4">
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 2</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: La tradición de la calçotada</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="enunciado">
+              <p><strong>Completa este texto sobre la tradición de la calçotada con el vocabulario proporcionado.</strong></p>
+            </div>
+            <div class="todo">
+              <div class="contenido">
+                <div class="banco-palabras">
+                  <div data-term="rincon">rincón</div>
+                  <div data-term="receta">receta</div>
+                  <div data-term="centenario">centenario/a</div>
+                  <div data-term="desplazar">desplazar</div>
+                  <div data-term="proximidad">proximidad</div>
+                  <div data-term="manjar">manjar</div>
+                  <div data-term="propuesta">propuesta</div>
+                  <div data-term="presentar">presentar</div>
+                  <div data-term="atractivo">atractivo/a</div>
+                  <div data-term="raiz">raíz</div>
+                </div>
+                <div class="texto">
+                  <p>La calçotada es una especialidad culinaria <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> nacida en Valls, Tarragona, que ha sido adoptada por otros muchos restaurantes y lugares de Cataluña hasta convertirse en uno de los <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> que mejor identifican nuestra cultura gastronómica.<br> Esta tradición gastronómica se ha convertido en un <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> turístico para gente de todos los continentes que se <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> a Valls y a otras villas del Alt Camp para buscar las <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> auténticas de esta especialidad y explorar la oferta de cocina del calçot, que poco a poco se está desarrollando en este <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> del país, donde este producto se convierte en el auténtico protagonista de platos de nueva creación, basados en las <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> tradicionales de la cocina del sur de Cataluña.<br> El calçot se está haciendo un espacio en la cocina de muchos restaurantes que siguen una filosofía basada en la gastronomía preparada a base de productos naturales, de <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> y de calidad. Además, presentan <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> creativas muy variadas elaboradas a partir de esta cebolla dulce: calçots con bechamel, bacalao con calçots, conejo relleno de calçots y níscalos, calçots con espinacas, ensalada de calçot con alcachofa…<br> Además de la calçotada, la gastronomía de Valls <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> otros elementos para tener en cuenta, como su aceite de oliva, los vinos tarraconenses, los productos de huerta, o los embutidos.</p>
+                </div>
+                <button id="verificar-respuestas">Verificar</button>
+              </div>
+              <div class="imagenes-2">
+                <img src="../../../images/tradición.png" alt="La tradición de la calçotada" class="imagen-lateral">
+                <img src="../../../images/gula.jpg" alt="La tradición de la calçotada" class="imagen-lateral">
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 3</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Receta secreta</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="texto">
+              <p><strong>Ordena correctamente los diferentes pasos de la receta de la salsa Romesco y completa sus acciones en forma de Imperativo.</strong></p>
+            </div>
+            <div class="contenedor-actividad">
+              <div class="pasos-desordenados">
+                <h3>PASOS:</h3>
+                <ul id="lista-desordenada">
+                  <li draggable="true" data-id="4">
+                    <input type="text" placeholder="agregar"> al mortero los tomates pelados, los ajos sin piel y la pulpa de las ñoras. 
+                    <input type="text" placeholder="incorporar"> también el pan tostado si quieres una salsa más espesa.
+                  </li>
+                  <li draggable="true" data-id="7">
+                    <input type="text" placeholder="servir"> la salsa en un cuenco junto a los calçots asados y 
+                    <input type="text" placeholder="disfrutar">.
+                  </li>
+                  <li draggable="true" data-id="2">
+                    <input type="text" placeholder="colocar"> los tomates y las cabezas de ajo en una bandeja. 
+                    <input type="text" placeholder="hornear"> a 180 ºC durante 20-25 minutos hasta que estén blandos. Cuando estén listos, 
+                    <input type="text" placeholder="pelar"> los tomates y los ajos asados.
+                  </li>
+                  <li draggable="true" data-id="5">
+                    <input type="text" placeholder="añadir"> el pimentón, la sal, el vinagre y, si te gusta, un poco de guindilla. 
+                    <input type="text" placeholder="mezclar"> bien todos los ingredientes.
+                  </li>
+                  <li draggable="true" data-id="1">
+                    <input type="text" placeholder="poner"> las ñoras en agua caliente y 
+                    <input type="text" placeholder="dejar"> en remojo durante 15-20 minutos. Luego, 
+                    <input type="text" placeholder="conservar"> su pulpa.
+                  </li>
+                  <li draggable="true" data-id="3">
+                    En un mortero, <input type="text" placeholder="triturar"> almendras y avellanas tostadas hasta que queden finas.
+                  </li>
+                  <li draggable="true" data-id="6">
+                    Mientras bates, <input type="text" placeholder="verter"> poco a poco el aceite de oliva hasta obtener una textura cremosa y homogénea.
+                  </li>
+                </ul>
+              </div>
+              <div class="zona-ordenar">
+                <h3>RECETA:</h3>
+                <ol id="lista-ordenada" class="dropzone"></ol>
+              </div>
+            </div>
+            <button id="comprobar">Verificar</button>
+            <div id="resultado"></div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Actividad 4</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: ¿Cómo se come?</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="texto">
+              <p><strong>En este video se explica la forma de comer los calçots y otros temas relacionados con la comida española. Después de verlo, responde las preguntas.</strong></p>
+            </div>
+            <div class="video">
+              <video controls width="100%" preload="metadata">
+              <source src="../../../images/nil.mp4" type="video/mp4">
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="activity-title">Reflexión final</h2>
-          <div class="activity-block"></div>
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Crea tu verdura</h2>
+          <div class="bloque-actividad actividad-5">
+            <p class="enunciado-actividad"><strong>Crea con tus compañeros/as una verdura siguiendo estos pasos:</strong></p>
+              <form class="formulario-verdura" autocomplete="off">
+                <div class="campo-form">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="campo-form">
+                  <label for="pais">País de origen:</label>
+                  <input type="text" id="pais" name="pais">
+                </div>
+                <div class="campo-form">
+                  <label>Sabor:</label>
+                  <div class="sabores">
+                    <label><input type="checkbox" name="sabor" value="dulce"> Dulce</label>
+                    <label><input type="checkbox" name="sabor" value="salado"> Salado</label>
+                    <label><input type="checkbox" name="sabor" value="amargo"> Amargo</label>
+                    <label><input type="checkbox" name="sabor" value="ácido"> Ácido</label>
+                    <label><input type="checkbox" name="sabor" value="picante"> Picante</label>
+                  </div>
+                </div>
+              </form>
+            <div class="pizarra-controles">
+              <canvas id="pizarra" width="600" height="400" style="border:1px solid #002b36; border-radius:8px; cursor: crosshair;"></canvas>
+              <div style="margin: 10px 0;">
+                <button id="modo-pincel">Pincel</button>
+                <button id="modo-bote">Bote de pintura</button>
+                <button id="borrar">Borrar</button>
+                <button id="guardar">Guardar dibujo</button>
+              </div>
+              <div style="margin: 10px 0;">
+              <span class="etiqueta-colores">Colores: </span>
+                <button class="color-btn" style="background: black;" data-color="#000000"></button>
+                <button class="color-btn" style="background: yellow;" data-color="#ffff00"></button>
+                <button class="color-btn" style="background: green;" data-color="#008000"></button>
+                <button class="color-btn" style="background: orange;" data-color="#ffa500"></button>
+                <button class="color-btn" style="background: purple;" data-color="#800080"></button>
+                <button class="color-btn" style="background: red;" data-color="#ff0000"></button>
+              </div>
+              <div id="galeria"></div>
+            </div>
+          </div>
         </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="texto">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te gustaría participar en una calçotada?</li>
+                <li>¿Qué opinas del ritual de comer calçots con las manos y ensuciarse un poco?</li>
+                <li>¿Qué crees que hace que la calçotada sea tan especial comparada con otras comidas al aire libre?</li>
+                <li>¿Crees que es importante mantener vivas estas tradiciones?</li>
+                <li>¿Crees que la calçotada debería celebrarse fuera de Cataluña?</li>
+              </ul>
+            </div>
+            <div class="imagen">
+              <img src="../../../images/empachado.png" alt="Calçots">
+            </div>
+          </div>
+        </section>
+
       </main>
       <footer>
         <p>© Expanish - Spanish in the City</p>
       </footer>
     </div>
+    <script src="../../../scripts/Gastronomía/B1.js"></script>
   </body>
 </html>

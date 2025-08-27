@@ -1,187 +1,133 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const gridSize = 15;
-  const words = [
-    "BASILICA",
-    "CAMPANARIO",
-    "VIDRIERA",
-    "COLUMNA",
-    "ARCO",
-    "FACHADA",
-    "ALTAR",
-    "NAVE",
-    "ESCALERA"
-  ];
+/* ACTIVIDAD 1 */
+const carouselData = [
+  {
+    image: '../../../images/puertas.png',
+    options: ['puertas', 'ventanales', 'escaleras'],
+    correct: 'puertas',
+    text: 'En la imagen podemos ver las __ de la Caridad. En ellas hay flores, plantas y diferentes insectos.'
+  },
+  {
+    image: '../../../images/fachada.png',
+    options: ['decorado', 'fachada', 'casa'],
+    correct: 'fachada',
+    text: 'La __ de la Pasión cuenta la historia de la muerte y resurrección de Jesús.'
+  },
+  {
+    image: '../../../images/ventanal.png',
+    options: ['rosetón', 'ventanal', 'cristal'],
+    correct: 'ventanal',
+    text: 'Los __ de la basílica son muy grandes y gracias a su vidriera la luz pasa con muchos colores.'
+  },
+  {
+    image: '../../../images/torres.png',
+    options: ['torre', 'edificio', 'piso'],
+    correct: 'torre',
+    text: 'La __ es una estructura muy alta con muchos detalles al final.'
+  },
+  {
+    image: '../../../images/columna.png',
+    options: ['palo', 'pilar', 'columna'],
+    correct: 'columna',
+    text: 'La __ es un elemento vertical que soporta estructuras.'
+  },
+  {
+    image: '../../../images/arco1.png',
+    options: ['arco', 'puente', 'marco'],
+    correct: 'arco',
+    text: 'El __ es una estructura curva que soporta peso y permite el acceso.'
+  },
+  {
+    image: '../../../images/planta.png',
+    options: ['piso', 'planta', 'suelo'],
+    correct: 'planta',
+    text: 'La __ son líneas que marcan las divisiones interiores del edificio, sus límites y su diseño.'
+  },
+  {
+    image: '../../../images/escultura0.png',
+    options: ['piedra', 'molde', 'escultura'],
+    correct: 'escultura',
+    text: 'Estas __ representan la escena de la captura de Jesús.'
+  },
+];
 
-  const grid = Array.from({ length: gridSize }, () =>
-    Array(gridSize).fill("")
-  );
+let currentIndex = 0;
+const imageElement = document.getElementById('carousel-image');
+const optionsContainer = document.getElementById('options-container');
+const textContainer = document.getElementById('text-container');
 
-  function placeWord(word) {
-    const dir = Math.random() < 0.5 ? "H" : "V";
-    const len = word.length;
-    let row, col, fits;
+function loadSlide(index) {
+  const data = carouselData[index];
+  imageElement.src = data.image;
+  imageElement.alt = `Imagen relacionada con ${data.correct}`;
+  optionsContainer.innerHTML = '';
+  textContainer.innerText = data.text;
 
-    for (let attempt = 0; attempt < 100; attempt++) {
-      if (dir === "H") {
-        row = Math.floor(Math.random() * gridSize);
-        col = Math.floor(Math.random() * (gridSize - len));
-        fits = true;
-        for (let i = 0; i < len; i++) {
-          const current = grid[row][col + i];
-          if (current && current !== word[i]) {
-            fits = false;
-            break;
-          }
-        }
-        if (fits) {
-          for (let i = 0; i < len; i++) {
-            grid[row][col + i] = word[i];
-          }
-          return true;
-        }
+  data.options.forEach(option => {
+    const btn = document.createElement('button');
+    btn.className = 'option-button';
+    btn.innerText = option;
+
+    btn.onclick = () => {
+      document.querySelectorAll('.option-button').forEach(b => b.disabled = true);
+
+      if (option === data.correct) {
+        btn.classList.add('correct');
       } else {
-        row = Math.floor(Math.random() * (gridSize - len));
-        col = Math.floor(Math.random() * gridSize);
-        fits = true;
-        for (let i = 0; i < len; i++) {
-          const current = grid[row + i][col];
-          if (current && current !== word[i]) {
-            fits = false;
-            break;
-          }
+        btn.classList.add('incorrect');
+      }
+
+      textContainer.innerHTML = data.text.replace('__', `<span class="highlight">${data.correct}</span>`);
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'next-button';
+      nextBtn.innerText = 'Siguiente';
+      nextBtn.onclick = () => {
+        currentIndex++;
+        if (currentIndex < carouselData.length) {
+          loadSlide(currentIndex);
+        } else {
+          optionsContainer.innerHTML = '<p><strong>¡Actividad completada!</strong></p>';
+          textContainer.innerHTML = '';
         }
-        if (fits) {
-          for (let i = 0; i < len; i++) {
-            grid[row + i][col] = word[i];
-          }
-          return true;
-        }
-      }
-    }
-    return false;
-  }
+      };
+      textContainer.appendChild(nextBtn); 
+    };
 
-  words.forEach(word => placeWord(word.toUpperCase()));
-
-  const letters = "ABCDEFGHIJKLMNOPQRSTUV";
-  for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-      if (!grid[i][j]) {
-        grid[i][j] = letters[Math.floor(Math.random() * letters.length)];
-      }
-    }
-  }
-
-  const table = document.getElementById("word-search-grid");
-  for (let row = 0; row < gridSize; row++) {
-    const tr = document.createElement("tr");
-    for (let col = 0; col < gridSize; col++) {
-      const td = document.createElement("td");
-      td.textContent = grid[row][col];
-      td.dataset.row = row;
-      td.dataset.col = col;
-      tr.appendChild(td);
-    }
-    table.appendChild(tr);
-  }
-
-  let isMouseDown = false;
-  let selectedCells = [];
-
-  table.addEventListener("mousedown", (e) => {
-    if (e.target.tagName === "TD") {
-      isMouseDown = true;
-      clearSelection();
-      selectCell(e.target);
-    }
+    optionsContainer.appendChild(btn);
   });
+}
 
-  table.addEventListener("mouseover", (e) => {
-    if (isMouseDown && e.target.tagName === "TD") {
-      const lastCell = selectedCells[selectedCells.length - 1];
-      if (isAdjacent(lastCell, e.target)) {
-        selectCell(e.target);
-      }
-    }
-  });
-
-  table.addEventListener("mouseup", () => {
-    isMouseDown = false;
-    const selectedWord = selectedCells.map(td => td.textContent).join("");
-    const reversed = selectedWord.split("").reverse().join("");
-    const found = words.includes(selectedWord) || words.includes(reversed);
-
-    if (found) {
-      selectedCells.forEach(td => td.classList.add("highlight"));
-      markWordInList(selectedWord);
-      selectedCells = [];
-    } else {
-      selectedCells.forEach(td => td.classList.add("wrong"));
-      setTimeout(() => {
-        selectedCells.forEach(td => {
-          td.classList.remove("wrong");
-          td.classList.remove("selected");
-        });
-        selectedCells = [];
-      }, 500);
-    }
-  });
-
-  function selectCell(cell) {
-    if (!selectedCells.includes(cell)) {
-      cell.classList.add("selected");
-      selectedCells.push(cell);
-    }
-  }
-
-  function clearSelection() {
-    selectedCells.forEach(td => td.classList.remove("selected"));
-    selectedCells = [];
-  }
-
-  function isAdjacent(a, b) {
-    const r1 = parseInt(a.dataset.row);
-    const c1 = parseInt(a.dataset.col);
-    const r2 = parseInt(b.dataset.row);
-    const c2 = parseInt(b.dataset.col);
-    const sameRow = r1 === r2;
-    const sameCol = c1 === c2;
-    const straightLine = sameRow || sameCol;
-
-    if (!straightLine) return false;
-    if (selectedCells.length === 1) return true;
-
-    const first = selectedCells[0];
-    const fr = parseInt(first.dataset.row);
-    const fc = parseInt(first.dataset.col);
-    return (r2 === fr && c2 !== fc) || (c2 === fc && r2 !== fr);
-  }
-
-  function markWordInList(word) {
-    const normalized = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    const reversed = normalized.split("").reverse().join("");
-    const wordDivs = document.querySelectorAll(".word-bank div");
-
-    wordDivs.forEach(div => {
-      const term = div.dataset.term.toLowerCase();
-      if (normalized === term || reversed === term) {
-        div.style.textDecoration = "line-through";
-        div.style.color = "black";
-      }
-    });
-  }
-});
+loadSlide(currentIndex);
 
 /* ACTIVIDAD 2 */
+const respuestasCorrectas1 = ["escultura", "planta", "torres", "arcos", "fachada", "puerta", "ventanal", "columna"];
+
+document.getElementById('check-btn-1').addEventListener('click', () => {
+  const gaps = document.querySelectorAll('.gap-1');
+  gaps.forEach((input, i) => {
+    const userAnswer = input.value.trim().toLowerCase();
+    if(userAnswer === respuestasCorrectas1[i].toLowerCase()) {
+      input.style.backgroundColor = "#d0f0d0";
+      input.style.border = "2px solid transparent";
+      input.style.color = "black";
+    } else {
+      input.style.backgroundColor = "#e63946";
+      input.style.color = "#ffff";
+      input.style.border = "2px solid transparent";
+    }
+  });
+});
+
+/* ACTIVIDAD 3 */
 document.addEventListener("DOMContentLoaded", () => {
   const activatorImage = document.getElementById("imagen-activadora");
   const modal = document.getElementById("foto-modal");
-  const modalImg = document.getElementById("modal-detalle");
+  const modalImg = document.getElementById("detalle-modal");
   const closeButton = document.querySelector("#foto-modal .close-button");
 
   if (activatorImage) {
     activatorImage.addEventListener("click", () => {
-      modalImg.src = "../../../images/abside_detalle_2.png";
+      modalImg.src = "../../../images/abside_detalle.png";
       modal.classList.remove("hidden");
     });
   }
@@ -193,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const modal2 = document.getElementById("foto-modal");
-  const imagenAmpliada = document.getElementById("modal-detalle");
+  const imagenAmpliada = document.getElementById("detalle-modal");
   const cerrar2 = document.querySelector("#foto-modal .close-button");
 
   let scale = 1;
@@ -267,62 +213,54 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const respuestasCorrectas = ["hay", "está", "tiene", "está", "está", "tiene", "está", "hay", "tiene", "está", "hay"];
+const respuestasCorrectas2 = ["hay", "está", "tiene", "está", "está", "tiene", "está", "hay", "tiene", "está", "hay"];
 
-document.getElementById('check-btn').addEventListener('click', () => {
-  const gaps = document.querySelectorAll('.gap');
+document.getElementById('check-btn-2').addEventListener('click', () => {
+  const gaps = document.querySelectorAll('.gap-2');
   gaps.forEach((input, i) => {
     const userAnswer = input.value.trim().toLowerCase();
-    if(userAnswer === respuestasCorrectas[i].toLowerCase()) {
-      input.style.borderBottom = "2px solid green";
+    if(userAnswer === respuestasCorrectas2[i].toLowerCase()) {
       input.style.backgroundColor = "#d0f0d0";
+      input.style.border = "2px solid transparent";
+      input.style.color = "black";
     } else {
-      input.style.borderBottom = "2px solid red";
       input.style.backgroundColor = "#e63946";
+      input.style.color = "#ffff";
+      input.style.border = "2px solid transparent";
     }
   });
 });
 
-/* ACTIVIDAD 3 */
-const button = document.createElement("button");
-button.id = "goToLinkButton";
-button.innerText = "Visita virtual";
-button.onclick = function () {
-  window.open("https://sagradafamilia.org/es/visita-virtual", "_blank");
-};
-
+/* ACTIVIDAD 4 */
 document.addEventListener("DOMContentLoaded", () => {
-  const contentBlock = document.querySelector(".activity3-content");
-  contentBlock.appendChild(button);
-});
+  const modal = document.getElementById("info-modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const modalImage = document.getElementById("modal-image");
+  const closeButton = modal.querySelector(".close-button"); 
 
-const modal = document.getElementById('info-modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalImage = document.getElementById('modal-image');
-const closeButton = document.querySelector('.close-button');
+  document.querySelectorAll(".info-icon").forEach(infoBtn => {
+    infoBtn.addEventListener("click", () => {
+      modalTitle.textContent = infoBtn.getAttribute("data-title") || "";
+      modalDescription.textContent = infoBtn.getAttribute("data-description") || "";
+      modalImage.src = infoBtn.getAttribute("data-image") || "";
+      modalImage.alt = `Imagen relacionada con ${infoBtn.getAttribute("data-title")}`;
+      modal.classList.remove("hidden");
+    });
+  });
 
-document.querySelectorAll('.info-icon').forEach(button => {
-  button.addEventListener('click', () => {
-    modalTitle.textContent = button.getAttribute('data-title');
-    modalDescription.textContent = button.getAttribute('data-description');
-    modalImage.src = button.getAttribute('data-image');
-    modalImage.alt = `Imagen relacionada con ${button.getAttribute('data-title')}`;
-    modal.classList.remove('hidden');
+  closeButton.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+    }
   });
 });
 
-closeButton.addEventListener('click', () => {
-  modal.classList.add('hidden');
-});
-
-modal.addEventListener('click', e => {
-  if (e.target === modal) {
-    modal.classList.add('hidden');
-  }
-});
-
-/* ACTIVIDAD 4 */
+/* ACTIVIDAD 5 */
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   const slides = Array.from(track.children);
@@ -352,9 +290,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateSlidePosition);
   updateSlidePosition(); 
 
-  const modal = document.getElementById("image-modal");
-  const modalImg = document.getElementById("modal-img");
-  const closeModal = document.querySelector(".close-modal");
+  const modal = document.getElementById("image-modal-5");
+  const modalImg = document.getElementById("modal-img-5");
+  const closeModal = document.querySelector(".close-modal-5");
 
   slides.forEach(img => {
     img.style.cursor = "zoom-in";

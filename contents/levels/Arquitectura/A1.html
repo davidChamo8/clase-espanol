@@ -8,84 +8,102 @@
     <link rel="stylesheet" href="../../../style/levels/Arquitectura/stylesA1.css">
   </head>
   <body>
-    <h1 class="titulo-modulo">Arquitectura - Nivel A1/2</h1>
-    <main>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Arquitectura - Nivel A1/2</h1>
+      <main>
 
-      <section id="introduccion">
-        <div class="contenedor">
-          <h2 class="activity-title">Entramos en el tema</h2>
-          <div class="intro-block">
-            <div class="activity-content">
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="texto">
               <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
               <ul>
                 <li>¿Te interesa la arquitectura?</li>
                 <li>¿Te gusta la arquitectura de Barcelona?</li>
-                <li>¿Has visitado el interior de la Sagrada Familia? ¿Te gustó?</li>
-                <li>¿Qué monumentos te gustan más de España?</li>
-                <li>¿La Sagrada Familia te parece el monumento más importante de España?</li>
+                <li>¿Qué monumentos o edificios te gustan más de la ciudad?</li>
+                <li>¿Has visitado el interior de la Sagrada Familia? ¿Cumplió tus expectativas?</li>
+                <li>¿Te recuerda a algún otro edificio?</li>
+                <li>¿Te parece el monumento más importante de España?</li>
                 <li>¿Cuál piensas que es el monumento más importante de tu país? ¿Por qué?</li>
               </ul>
             </div>
-            <img src="../../../images/basilica.png" alt="Sagrada Familia" id="sagrada" class="imagen-lateral"/>
+            <div class="imagen-intro">
+              <img src="../../../images/basilica.png" alt="Sagrada Familia">
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="actividad1">
-        <div class="contenedor">
-          <h2 class="activity-title">Actividad 1: Sopa de letras</h2>
-          <div class="activity1-block">
-            <div id="word-search-container">
-              <h3>Palabras a buscar:</h3>
-              <div class="word-bank">
-                <div data-term="basilica">Basílica</div>
-                <div data-term="campanario">Campanario</div>
-                <div data-term="vidriera">Vidriera</div>
-                <div data-term="columna">Columna</div>
-                <div data-term="arco">Arco</div>
-                <div data-term="fachada">Fachada</div>
-                <div data-term="altar">Altar</div>
-                <div data-term="nave">Nave</div>
-                <div data-term="escalera">Escalera</div>
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: Vocabulario arquitectónico</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="enunciado">
+              <p><strong>Elige la palabra correcta para la imagen:</strong></p>
+            </div>
+            <div class="equipo">
+              <div id="carousel-container">
+                <img id="carousel-image" src="" alt="Imagen del carrusel">
+                <div id="options-container"></div>
+              </div>
+              <div id="text-container"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: Palabras secretas</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="mensaje">
+              <p><strong>Completa las oracines con las palabras de la actividad anterior.</strong></p>
+            </div>
+            <div class="oraciones">
+              <ol>
+                <li>En mi universidad hay una réplica de la <input type="text" class="gap-1" size="8" style="font-weight: bold;"> de la Venus de Milo.</li>
+                <li>El arquitecto está trabajando en la <input type="text" class="gap-1" size="8" style="font-weight: bold;"> del edificio nuevo.</li>
+                <li>En el pasado, los castillos tenían <input type="text" class="gap-1" size="8" style="font-weight: bold;"> para defenderse.</li>
+                <li>La mezquita de Córdoba es reconocida por sus <input type="text" class="gap-1" size="8" style="font-weight: bold;">.</li>
+                <li>El edificio donde vivo tiene la <input type="text" class="gap-1" size="8" style="font-weight: bold;"> roja con muchas ventanas.</li>
+                <li>Estas llaves no son de tu <input type="text" class="gap-1" size="8" style="font-weight: bold;">.</li>
+                <li>El <input type="text" class="gap-1" size="8" style="font-weight: bold;"> de la iglesia de mi barrio es muy bonito.</li>
+                <li>La <input type="text" class="gap-1" size="8" style="font-weight: bold;"> de Trajano es un monumento muy importante en Roma.</li>
+              </ol>
+              <button id="check-btn-1">Verificar</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: El interior del templo</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="enunciado">
+              <p><strong>Completa el texto informativo sobre una de las partes más importantes de una iglesia: el ábside. Usa los verbos: haber(x3), estar(x5) y tener(x3)</strong></p>
+            </div>
+            <div class="conjunto">
+              <div class="textaco">
+                <p>En las iglesias <input type="text" class="gap-2" size="8" style="font-weight: bold;"> una parte muy importante que se llama ábside, donde <input type="text" class="gap-2" size="8" style="font-weight: bold;"> el altar. En la Sagrada Familia, el altar <input type="text" class="gap-2" size="8" style="font-weight: bold;"> una conexión especial con la torre de Jesús, que <input type="text" class="gap-2" size="8" style="font-weight: bold;"> justo encima del ábside. Esta estructura <input type="text" class="gap-2" size="8" style="font-weight: bold;"> en la parte trasera del templo. <input type="text" class="gap-2" size="8" style="font-weight: bold;"> una forma semicircular y <input type="text" class="gap-2" size="8" style="font-weight: bold;"> por encima de la cripta, lugar donde todavía <input type="text" class="gap-2" size="8" style="font-weight: bold;"> detalles antiguos. Este ábside <input type="text" class="gap-2" size="8" style="font-weight: bold;"> tres partes: el presbiterio, el deambulatorio (un pasillo que <input type="text" class="gap-2" size="8" style="font-weight: bold;"> alrededor) y las siete capillas absidiales. También <input type="text" class="gap-2" size="8" style="font-weight: bold;"> dos escaleras grandes a los lados que permiten bajar a la cripta y subir a las torres, que aún están en construcción.</p>
+                <button id="check-btn-2">Verificar</button>
+              </div>
+              <div class="interior">
+                <img src="../../../images/abside.png" alt="Ábside" class="imagen-lateral" id="imagen-activadora"/>
               </div>
             </div>
-            <table id="word-search-grid"></table>
-          </div>
-        </div>
-      </section>
-
-      <section id="actividad2">
-        <div class="contenedor">
-          <h2 class="activity-title">Actividad 2: El interior del templo</h2>
-          <div class="activity2-block">
-            <div class="activity2-content">
-              <div class="word-bank">
-                <div data-term="haber">Haber(x3)</div>
-                <div data-term="estar">Estar(x5)</div>
-                <div data-term="tener">Tener(x3)</div>
-              </div>
-              <p>En las iglesias <input type="text" class="gap" size="8" style="font-weight: bold;"> una parte muy importante que se llama ábside, donde <input type="text" class="gap" size="8" style="font-weight: bold;"> el altar. En la Sagrada Familia, el altar <input type="text" class="gap" size="8" style="font-weight: bold;"> una conexión especial con la torre de Jesús, que <input type="text" class="gap" size="8" style="font-weight: bold;"> justo encima del ábside. Esta estructura <input type="text" class="gap" size="8" style="font-weight: bold;"> en la parte trasera del templo. <input type="text" class="gap" size="8" style="font-weight: bold;"> una forma semicircular y <input type="text" class="gap" size="8" style="font-weight: bold;"> por encima de la cripta, lugar donde todavía <input type="text" class="gap" size="8" style="font-weight: bold;"> detalles antiguos. Este ábside <input type="text" class="gap" size="8" style="font-weight: bold;"> tres partes: el presbiterio, el deambulatorio (un pasillo que <input type="text" class="gap" size="8" style="font-weight: bold;"> alrededor) y las siete capillas absidiales. También <input type="text" class="gap" size="8" style="font-weight: bold;"> dos escaleras grandes a los lados que permiten bajar a la cripta y subir a las torres, que aún están en construcción.</p>
-              <button id="check-btn">Comprobar respuestas</button>
-            </div>
-            <img src="../../../images/abside.png" alt="Ábside" class="imagen-lateral" id="imagen-activadora"/>
             <div id="foto-modal" class="modal hidden">
-              <div id="singular" class="modal-content">
+              <div id="singular" class="contenido-modal">
                 <span class="close-button">&times;</span>
-                <div class="zoom-container">
-                  <img id="modal-detalle" src="../../../images/abside_detalle_2.png".png" alt="Detalles del ábside"/>
+                <div class="contenedor-zoom">
+                  <img id="detalle-modal" src="../../../images/abside_detalle_2.png".png" alt="Detalles del ábside"/>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="actividad3">
-        <div class="contenedor">
-          <h2 class="activity-title">Actividad 3: Enfrentamiento de fachadas</h2>
-          <div class="activity3-block">
-            <div class="activity3-content">
-              <p><strong>Muestra atención en estos elementos:</strong></p>
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: Enfrentamiento de fachadas</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="enunciadoo">
+              <p><strong>Responde a estas preguntas para hacer una comparación de las fachadas:</strong></p>
+            </div>
+            <div class="gluten">
               <ol>
                 <li>Esculturas (formas, escenas, figuras)
                   <button class="info-icon" data-title="Esculturas" data-description="Representación tridimensional de una figura. El nacimiento de Cristo se presenta en la fachada en orden cronológico." data-image="../../../images/esculturas2.png">🛈</button>
@@ -100,71 +118,73 @@
                   <button class="info-icon" data-title="Relieve" data-description="Detalle de las puertas del portal de la Esperanza en la fachada del Nacimiento." data-image="../../../images/relieve2.png">🛈</button>
                 </li>
               </ol>
+              <button class="external-link" onclick="window.open('https://sagradafamilia.org/es/visita-virtual', '_blank')">Visita Virtual</button>
             </div>
-          </div>
-          <div id="info-modal" class="modal hidden">
-            <div class="modal-content">
-              <span class="close-button">&times;</span>
-              <h3 id="modal-title"></h3>
-              <img id="modal-image" alt="Ilustración del término">
-              <p id="modal-description"></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="actividad4">
-        <div class="contenedor">
-          <h2 class="activity-title">Actividad 4: A o B</h2>
-          <div class="activity4-block">
-            <p class="activity-instruction"><strong>Escoge una imagen y explica por qué</strong></p>
-            <div class="carousel">
-              <button class="prev">&#10094;</button>
-              <div class="carousel-track">
-                <img src="../../../images/comparacion1.png" class="carousel-img" />
-                <img src="../../../images/comparacion2.png" class="carousel-img" />
-                <img src="../../../images/comparacion3.png" class="carousel-img" />
-                <img src="../../../images/comparacion4.png" class="carousel-img" />
-                <img src="../../../images/comparacion5.png" class="carousel-img" />
+            <div id="info-modal" class="modal hidden">
+              <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 id="modal-title"></h3>
+                <img id="modal-image" alt="Ilustración del término">
+                <p id="modal-description"></p>
               </div>
-              <button class="next">&#10095;</button>
-            </div>
-            <div id="image-modal" class="modal hidden">
-              <span class="close-modal">&times;</span>
-              <img class="modal-content" id="modal-img" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="reflexion">
-        <div class="contenedor">
-          <h2 class="activity-title">Reflexión</h2>
-          <div class="rflx-block">
-            <div class="reflexion-wrapper">
-              <div class="reflexion-content">
-                <p><strong>Comenta estas últimas preguntas con tus compañero/as:</strong></p>
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: A o B</h2>
+          <div class="bloque-actividad actividad-5">
+            <div class="enunciado">
+              <p><strong>Elige la imagen que más te gusta de las siguientes parejas y explica por qué.</strong></p>
+            </div>
+            <div class="tropa">
+              <div class="carousel">
+                <button class="prev">&#10094;</button>
+                <div class="carousel-track">
+                  <img src="../../../images/comparacion1.png" class="carousel-img" />
+                  <img src="../../../images/comparacion2.png" class="carousel-img" />
+                  <img src="../../../images/comparacion3.png" class="carousel-img" />
+                  <img src="../../../images/comparacion4.png" class="carousel-img" />
+                  <img src="../../../images/comparacion5.png" class="carousel-img" />
+                </div>
+                <button class="next">&#10095;</button>
+              </div>
+              <div id="image-modal-5" class="modal-5 hidden">
+                <span class="close-modal-5">&times;</span>
+                <img class="modal-content-5" id="modal-img-5" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="subtitulo">
+              <p><strong>Comenta estas últimas cuestiones con tus compañero/as:</strong></p>
+            </div>
+            <div class="contenidete">
+              <div class="imagen-reflexion">
+                <img src="../../../images/gracias.png" alt="Despedida" id="gracias" class="imagen-laterall">
+              </div>
+              <div class="textal">
                 <ul>
                   <li>Después de estas actividades, ¿te interesa más la Sagrada Familia?</li>
                   <li>¿Te interesa aprender léxico relacionado con la arquitectura?</li>
-                  <li>¿En qué año piensas que terminarás las construcciones de la Sagrada Familia? ¿Quieres verla completada?</li>
+                  <li>¿En qué año piensas que se terminará la Sagrada Familia? ¿Irás a verla completada?</li>
                 </ul>
-                <p>Si tenemos tiempo, podéis investigar los <strong>Cuadernos informativos</strong> de la página web</p>
+                <p>Si hay más tiempo, podéis investigar los <strong>Cuadernos informativos</strong> de la página web:</p>
+                <button class="external-link" onclick="window.open('https://sagradafamilia.org/es/los-cuadernos', '_blank')">Cuadernos informativos</button>
               </div>
-              <button id="external-link" onclick="window.open('https://sagradafamilia.org/es/los-cuadernos', '_blank')">Cuadernos informativos</button>
             </div>
-            <img src="../../../images/gracias.png" alt="Despedida" id="gracias" class="imagen-lateral">
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
-    <footer>
-      <div class="contenedor">
+      </main>
+      <footer>
         <p>© Expanish - Spanish in the City</p>
-      </div>
-    </footer>
-
+      </footer>
+    </div>
     <script src="../../../scripts/Arquitectura/A1.js"></script>
   </body>
 </html>

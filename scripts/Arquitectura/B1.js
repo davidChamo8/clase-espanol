@@ -1,8 +1,8 @@
 /* ACTIVIDAD 1 */
 document.addEventListener("DOMContentLoaded", () => {
   const draggables = document.querySelectorAll(".draggable");
-  const dropZones = document.querySelectorAll(".drop-zone");
-  const wordBank = document.querySelector(".draggable-word-bank");
+  const dropZones = document.querySelectorAll(".dropzone");
+  const wordBank = document.querySelector(".banco-palabras-1");
 
   const termData = {
     columna: {
@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const term = e.target.dataset.term;
       const info = termData[term];
       if (info) {
-        document.getElementById("modal-title").textContent = termTitles[term] || term;
-        document.getElementById("modal-image").src = info.image;
-        document.getElementById("modal-description").textContent = info.text;
+        document.getElementById("titulo-modal").textContent = termTitles[term] || term;
+        document.getElementById("imagen-modal").src = info.image;
+        document.getElementById("descripcion-modal").textContent = info.text;
         document.getElementById("info-modal").classList.remove("hidden");
       }
     }
@@ -126,106 +126,35 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("info-modal").classList.add("hidden");
     });
   }
-
-/* ACTIVIDAD 2 */
-  const modal2 = document.getElementById("imagen-modal");
-  const imagenAmpliada = document.getElementById("imagen-ampliada");
-  const cerrar2 = document.getElementById("cerrar-imagen-modal");
-  const pieImagen = document.getElementById("pie-imagen");
-
-  let scale = 1;
-  let isDragging = false;
-  let startX, startY;
-  let translateX = 0, translateY = 0;
-
-  const updateTransform = () => {
-    imagenAmpliada.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-  };
-
-  document.querySelectorAll("#actividad2 .foto img").forEach(img => {
-    img.style.cursor = "zoom-in";
-
-    img.addEventListener("click", () => {
-      imagenAmpliada.src = img.src;
-      pieImagen.textContent = img.dataset.fecha || "";
-      modal2.classList.remove("hidden");
-      scale = 1;
-      translateX = 0;
-      translateY = 0;
-      updateTransform();
-    });
-  });
-
-  cerrar2.addEventListener("click", () => {
-    modal2.classList.add("hidden");
-    scale = 1;
-    translateX = 0;
-    translateY = 0;
-    updateTransform();
-  });
-
-  modal2.addEventListener("click", (e) => {
-    if (e.target === modal2) {
-      modal2.classList.add("hidden");
-      scale = 1;
-      translateX = 0;
-      translateY = 0;
-      updateTransform();
-    }
-  });
-
-  imagenAmpliada.addEventListener("wheel", function (e) {
-    e.preventDefault();
-    const zoomSpeed = 0.1;
-
-    if (e.deltaY < 0) {
-      scale += zoomSpeed;
-    } else if (e.deltaY > 0 && scale > zoomSpeed) {
-      scale -= zoomSpeed;
-    }
-
-    updateTransform();
-  });
-
-  imagenAmpliada.addEventListener("mousedown", (e) => {
-    if (scale <= 1) return;
-    isDragging = true;
-    startX = e.clientX - translateX;
-    startY = e.clientY - translateY;
-    imagenAmpliada.style.cursor = "grabbing";
-  });
-
-  document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    translateX = e.clientX - startX;
-    translateY = e.clientY - startY;
-    updateTransform();
-  });
-
-  document.addEventListener("mouseup", () => {
-    isDragging = false;
-    imagenAmpliada.style.cursor = "grab";
-  });
 });
 
-/* ACTIVIDAD 3 */
-const button = document.createElement("button");
-button.id = "goToLinkButton";
-button.innerText = "Visita virtual";
-button.onclick = function () {
-  window.open("https://sagradafamilia.org/es/visita-virtual", "_blank");
-};
+/* ACTIVIDAD 2 */
+const bloques = document.querySelectorAll(".bloque-imagen-glosario");
+const btnPrev = document.querySelector(".carrusel-btn.prev");
+const btnNext = document.querySelector(".carrusel-btn.next");
+let indice = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const contentBlock = document.querySelector(".activity3-content");
-  contentBlock.appendChild(button);
+function mostrarBloque(i) {
+  bloques.forEach((b, idx) => {
+    b.classList.toggle("activo", idx === i);
+  });
+}
+
+btnPrev.addEventListener("click", () => {
+  indice = (indice - 1 + bloques.length) % bloques.length;
+  mostrarBloque(indice);
+});
+
+btnNext.addEventListener("click", () => {
+  indice = (indice + 1) % bloques.length;
+  mostrarBloque(indice);
 });
 
 /* ACTIVIDAD 4 */
 document.addEventListener("DOMContentLoaded", () => {
   const activatorImage = document.getElementById("imagen-activadora");
   const modal = document.getElementById("foto-modal");
-  const modalImg = document.getElementById("modal-detalle");
+  const modalImg = document.getElementById("detalle-modal");
   const closeButton = document.querySelector("#foto-modal .close-button");
 
   if (activatorImage) {
@@ -242,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const modal2 = document.getElementById("foto-modal");
-  const imagenAmpliada = document.getElementById("modal-detalle");
+  const imagenAmpliada = document.getElementById("detalle-modal");
   const cerrar2 = document.querySelector("#foto-modal .close-button");
 
   let scale = 1;
@@ -323,11 +252,13 @@ document.getElementById('check-btn').addEventListener('click', () => {
   gaps.forEach((input, i) => {
     const userAnswer = input.value.trim().toLowerCase();
     if(userAnswer === respuestasCorrectas[i].toLowerCase()) {
-      input.style.borderBottom = "2px solid green";
       input.style.backgroundColor = "#d0f0d0";
+      input.style.border = "none";
+      input.style.color = "black";
     } else {
-      input.style.borderBottom = "2px solid red";
       input.style.backgroundColor = "#e63946";
+      input.style.color = "#ffff";
+      input.style.border = "none";
     }
   });
 });

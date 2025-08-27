@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Arquitectura - A0</title>
+    <meta charset="UTF-8">
+    <meta author="David Chamorro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/levels/Arquitectura/stylesAO.css">
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Arquitectura - Nivel A0</h1>
+      <main>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="texto">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te interesa la arquitectura?</li>
+                <li>¿Te gusta la arquitectura de Barcelona?</li>
+                <li>¿Qué monumentos o edificios te gustan más de la ciudad?</li>
+                <li>¿Has visitado el interior de la Sagrada Familia? ¿Cumplió tus expectativas?</li>
+                <li>¿Te recuerda a algún otro edificio?</li>
+                <li>¿Te parece el monumento más importante de España?</li>
+                <li>¿Cuál piensas que es el monumento más importante de tu país? ¿Por qué?</li>
+              </ul>
+            </div>
+            <div class="imagen-intro">
+              <img src="../../../images/basilica.png" alt="Sagrada Familia">
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: Sopa de letras</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="enunciado">
+              <p><strong>Encuentra el vocabulario dentro de la sopa de letras. Solo hay palabras en dirección horizontal y vertical:</strong></p>
+            </div>
+            <div id="buscar">
+              <div class="banco-palabras-1">
+                <div class="titulillo">
+                  <h3>Palabras a buscar:</h3>
+                </div>
+                <div class="palabros">
+                  <div data-term="basilica">Basílica</div>
+                  <div data-term="campanario">Campanario</div>
+                  <div data-term="vidriera">Vidriera</div>
+                  <div data-term="columna">Columna</div>
+                  <div data-term="arco">Arco</div>
+                  <div data-term="fachada">Fachada</div>
+                  <div data-term="altar">Altar</div>
+                  <div data-term="nave">Nave</div>
+                  <div data-term="escalera">Escalera</div>
+                </div>
+              </div>
+            </div>
+            <table id="buscar-grid"></table>
+            <div id="imagen-modal" class="modal-1">
+              <span class="cerrar">&times;</span>
+              <img class="modal-contenido-1" id="modal-img" />
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: A señalar</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="enunciadop">
+              <p><strong>Señala los elementos en las imágenes:</strong></p>
+            </div>
+            <div class="carrusel">
+              <div class="carrusel-contenedor">
+                <div class="foton activo">
+                  <img src="../../../images/dedo guell.png" alt="Park Guell">
+                  <p class="pie-imagen">Park Güell</p>
+                </div>
+                <div class="foton">
+                  <img src="../../../images/dedo flor.png" alt="Catedral Florencia">
+                  <p class="pie-imagen">Catedral de Santa María del Fiore</p>
+                </div>
+                <div class="foton">
+                  <img src="../../../images/dedo jorobado.png" alt="Notre Dame">
+                  <p class="pie-imagen">Notre Dame</p>
+                </div>
+                <button class="carrusel-btn prev">⟨</button>
+                <button class="carrusel-btn next">⟩</button>
+              </div>
+            </div>
+            <div class="canvas-controls">
+              <button id="erase-btn">Borrar</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Viaje por la historia</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="enunciado">
+              <p><strong>Conecta cada imagen con su descripción.</strong></p>
+            </div>
+            <div class="tripulacion">
+              <div class="match-container">
+                <div class="column" id="images">
+                  <figure class="item" data-id="1">
+                    <img src="../../../images/1925.jpg" alt="1925">
+                    <figcaption>1925</figcaption>
+                  </figure>
+                  <figure class="item" data-id="2">
+                    <img src="../../../images/1976.jpg" alt="1976">
+                    <figcaption>1976</figcaption>
+                  </figure>
+                </div>
+                <div class="column" id="descriptions">
+                  <div class="item" data-id="3">Tiene muchas torres con una gran estructura a la izquierda.</div>
+                  <div class="item" data-id="1">Solo tiene una fachada con cuatro torres y el portal.</div>
+                  <div class="item" data-id="4">Casi está listo, no tiene la torre principal, la más alta.</div>
+                  <div class="item" data-id="2">Tiene dos fachadas con muchos detalles, la parte central no existe.</div>
+                </div>
+                <div class="column" id="images">
+                  <figure class="item" data-id="3">
+                    <img src="../../../images/2017.jpg" alt="2017">
+                    <figcaption>2017</figcaption>
+                  </figure>
+                  <figure class="item" data-id="4">
+                    <img src="../../../images/2025.jpg" alt="2025">
+                    <figcaption>2025</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: Enfrentamiento de fachadas</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="enunciadoo">
+              <p><strong>Responde a estas preguntas para hacer una comparación de las fachadas:</strong></p>
+            </div>
+            <div class="gluten">
+              <ol>
+                <li>Esculturas (formas, escenas, figuras)
+                  <button class="info-icon" data-title="Esculturas" data-description="Representación tridimensional de una figura. El nacimiento de Cristo se presenta en la fachada en orden cronológico." data-image="../../../images/esculturas2.png">🛈</button>
+                </li>
+                <li>Columnas (aspecto, elementos decorativos)
+                  <button class="info-icon" data-title="Columnas" data-description="Elemento de soporte estructural, normalmente cilíndrico." data-image="../../../images/columna2.png">🛈</button>
+                </li>
+                <li>Sentimientos expresados
+                  <button class="info-icon" data-title="Sentimientos" data-description1="Información de ayuda" data-image="../../../images/sentimientos.png">🛈</button>
+                </li>
+                <li>Relieve (texturas)
+                  <button class="info-icon" data-title="Relieve" data-description="Detalle de las puertas del portal de la Esperanza en la fachada del Nacimiento." data-image="../../../images/relieve2.png">🛈</button>
+                </li>
+              </ol>
+              <button class="external-link" onclick="window.open('https://sagradafamilia.org/es/visita-virtual', '_blank')">Visita Virtual</button>
+            </div>
+            <div id="info-modal" class="modal hidden">
+              <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 id="modal-title"></h3>
+                <img id="modal-image" alt="Ilustración del término">
+                <p id="modal-description"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Obras de Gaudí</h2>
+          <div class="bloque-actividad actividad-5">
+            <p><strong>Ordena cronológicamente las imágenes en el orden correcto. Si lo haces bien, Antoni estará feliz.</strong></p>
+            <div class="feedback-antoni">
+              <img id="hombre" src="../../../images/antoni.png" alt="Hombre serio">
+            </div>
+            <button onclick="verificarOrden()">Verificar</button>
+            <div class="contenedor-imagenes">
+              <img src="../../../images/vicens.png" draggable="true" id="vicens" class="draggable">
+              <img src="../../../images/calvet.png" draggable="true" id="calvet" class="draggable">
+              <img src="../../../images/guell1.png" draggable="true" id="guell1" class="draggable">
+              <img src="../../../images/batllo.png" draggable="true" id="batllo" class="draggable">
+              <img src="../../../images/guell2.png" draggable="true" id="guell2" class="draggable">
+              <img src="../../../images/mila.png" draggable="true" id="mila" class="draggable">
+            </div>
+            <div class="contenedor-huecos">
+                <div class="dropzone" data-index="0"></div>
+                <div class="dropzone" data-index="1"></div>
+                <div class="dropzone" data-index="2"></div>
+                <div class="dropzone" data-index="3"></div>
+                <div class="dropzone" data-index="4"></div>
+                <div class="dropzone" data-index="5"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="subtitulo">
+              <p><strong>Comenta estas últimas cuestiones con tus compañero/as:</strong></p>
+            </div>
+            <div class="contenidete">
+              <div class="imagen-reflexion">
+                <img src="../../../images/gracias.png" alt="Despedida" id="gracias" class="imagen-laterall">
+              </div>
+              <div class="textal">
+                <ul>
+                  <li>Después de estas actividades, ¿te interesa más la Sagrada Familia?</li>
+                  <li>¿Te interesa aprender léxico relacionado con la arquitectura?</li>
+                  <li>¿En qué año piensas que se terminará la Sagrada Familia? ¿Irás a verla completada?</li>
+                </ul>
+                <p>Si hay más tiempo, podéis investigar los <strong>Cuadernos informativos</strong> de la página web:</p>
+                <button class="external-link" onclick="window.open('https://sagradafamilia.org/es/los-cuadernos', '_blank')">Cuadernos informativos</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <footer>
+        <p>© Expanish - Spanish in the City</p>
+      </footer>
+    </div>
+    <script src="../../../scripts/Arquitectura/AO.js"></script>
+  </body>
+</html>
