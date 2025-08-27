@@ -14,8 +14,8 @@ const carouselData = [
   },
   {
     image: '../../../images/ventanal.png',
-    options: ['rosetón', 'ventanal', 'cristal'],
-    correct: 'ventanal',
+    options: ['rosetones', 'ventanales', 'cristales'],
+    correct: 'ventanales',
     text: 'Los __ de la basílica son muy grandes y gracias a su vidriera la luz pasa con muchos colores.'
   },
   {
@@ -44,8 +44,8 @@ const carouselData = [
   },
   {
     image: '../../../images/escultura0.png',
-    options: ['piedra', 'molde', 'escultura'],
-    correct: 'escultura',
+    options: ['piedras', 'moldes', 'esculturas'],
+    correct: 'esculturas',
     text: 'Estas __ representan la escena de la captura de Jesús.'
   },
 ];
