@@ -575,7 +575,6 @@ ol {
   color: #E0E0E0
 }
 
-/* Media queries para pantallas medianas */
 @media (max-width: 1024px) {
   .tablero {
     grid-template-columns: repeat(3, 1fr);
@@ -593,7 +592,6 @@ ol {
   }
 }
 
-/* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
   .tablero {
     grid-template-columns: repeat(2, 1fr);

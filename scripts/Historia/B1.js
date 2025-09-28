@@ -171,3 +171,26 @@ function makeResizable(element, resizer) {
     isResizing = false;
   });
 }
+
+/* REFLEXIÓN */
+document.getElementById("agregar").addEventListener("click", function() {
+  const lista = document.querySelector("#reflexion ul");
+
+  const nuevoLi = document.createElement("li");
+  nuevoLi.classList.add("sin-punto");
+
+  const inputPais = document.createElement("input");
+  inputPais.type = "text";
+  inputPais.placeholder = "País";
+  inputPais.classList.add("pais"); 
+
+  const inputRecomiendo = document.createElement("input");
+  inputRecomiendo.type = "text";
+  inputRecomiendo.placeholder = "Recomiendo...";
+  inputRecomiendo.classList.add("respuesta"); 
+
+  nuevoLi.appendChild(inputPais);
+  nuevoLi.appendChild(inputRecomiendo);
+
+  lista.appendChild(nuevoLi);
+});
