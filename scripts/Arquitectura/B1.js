@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const respuestasCorrectas = ["iglesia", "ábside", "cabecera", "cripta", "capillas", "escaleras"];
+const respuestasCorrectas = ["iglesia", "altar", "cabecera", "cripta", "capillas", "escaleras"];
 
 document.getElementById('check-btn').addEventListener('click', () => {
   const gaps = document.querySelectorAll('.gap');

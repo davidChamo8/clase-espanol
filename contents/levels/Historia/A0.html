@@ -8,6 +8,252 @@
     <link rel="stylesheet" href="../../../style/levels/Historia/stylesA0.css">
   </head>
   <body>
-    <h1>Prueba de estilo A0 - Historia</h1>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Historia - Nivel A0</h1>
+      <main>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+            </div>
+            <div class="preguntas">
+              <ul>
+                <li>¿Te gusta la historia?</li>
+                <li>¿Hay alguna época que te interesa especialmente?</li>
+                <li>¿Por qué es importante la memoria histórica?</li>
+                <li>¿Qué piensas de los museos? ¿Te gustan?</li>
+                <li>¿Cómo puede un museo atraer a los visitantes?</li>
+                <li>¿Has visitado alguna vez un espacio del MUHBA?</li>
+              </ul>
+            </div>
+            <div class="imagen-intro">
+              <img src="../../../images/catalunya.png" alt="Símbolo">
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: Bingo</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="enunciado">
+              <p><strong>Vamos a jugar al Bingo por grupos, cada uno tiene que elegir un ámbito de la historia. Cuando todas tus palabras son mencionadas, grita: ¡BINGO!</strong></p>
+            </div>
+            <div class="botones">
+              <button id="btn-palabra">Palabra</button>
+              <button id="btn-bingo">¡BINGO!</button>
+            </div>
+            <div class="resultados">
+              <div id="palabra-actual" style="margin-top:1rem; font-size:1.5rem; font-weight:bold;"></div>
+              <div id="lista-bingo" style="margin-top:1rem;"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: Vocabulario por espacio</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="enunciado">
+              <p><strong>Agrupa el vocabulario según el espacio al que pertenecen. Cada lugar tiene cuatro sustantivos y adjetivos relacionados:</strong></p>
+            </div>
+            <div class="columnas">
+              <div class="columna-1">
+                <div class="titulo">SUSTANTIVOS</div>
+                <ul class="lista-doble">
+                  <li>Colores</li>
+                  <li>Muralla</li>
+                  <li>Fantasía</li>
+                  <li>Ruinas</li>
+                  <li>Arcos</li>
+                  <li>Azulejos</li>
+                  <li>Mirador</li>
+                  <li>Modernismo</li>
+                  <li>Búnker</li>
+                  <li>Plaza</li>
+                  <li>Guerra</li>
+                  <li>Piedra</li>
+                </ul>
+              </div>
+              <div class="columna-2">
+                <div class="titulo">ADJETIVOS</div>
+                <ul class="lista-doble">
+                  <li>Abandonado/a</li>
+                  <li>Panorámico/a</li>
+                  <li>Colorido/a</li>
+                  <li>Elevado/a</li>
+                  <li>Amplio/a</li>
+                  <li>Creativo/a</li>
+                  <li>Medieval</li>
+                  <li>Histórico/a</li>
+                  <li>Mágico/a</li>
+                  <li>Tranquilo/a</li>
+                  <li>Único/a</li>
+                  <li>Estratégico/a</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bloques">
+              <div class="bloque">
+                <div class="bloque-imagen">
+                  <img src="../../../images/rei.jpg" alt="Plaça del Rei">
+                  <figcaption><strong>Plaça del Rei</strong></figcaption>
+                </div>
+                <div class="bloque-inputs">
+                  <input type="text" placeholder="Sustantivo 1">
+                  <input type="text" placeholder="Adjetivo 1">
+                  <input type="text" placeholder="Sustantivo 2">
+                  <input type="text" placeholder="Adjetivo 2">
+                  <input type="text" placeholder="Sustantivo 3">
+                  <input type="text" placeholder="Adjetivo 3">
+                  <input type="text" placeholder="Sustantivo 4">
+                  <input type="text" placeholder="Adjetivo 4">
+                </div>
+              </div>
+              <div class="bloque">
+                <div class="bloque-imagen">
+                  <img src="../../../images/guell.png" alt="Park Güell">
+                  <figcaption><strong>Park Güell</strong></figcaption>
+                </div>
+                <div class="bloque-inputs">
+                  <input type="text" placeholder="Sustantivo 1">
+                  <input type="text" placeholder="Adjetivo 1">
+                  <input type="text" placeholder="Sustantivo 2">
+                  <input type="text" placeholder="Adjetivo 2">
+                  <input type="text" placeholder="Sustantivo 3">
+                  <input type="text" placeholder="Adjetivo 3">
+                  <input type="text" placeholder="Sustantivo 4">
+                  <input type="text" placeholder="Adjetivo 4">
+                </div>
+              </div>
+              <div class="bloque">
+                <div class="bloque-imagen">
+                  <img src="../../../images/turo.jpg" alt="Turó de la Rovira">
+                  <figcaption><strong>Turó de la Rovira</strong></figcaption>
+                </div>
+                <div class="bloque-inputs">
+                  <input type="text" placeholder="Sustantivo 1">
+                  <input type="text" placeholder="Adjetivo 1">
+                  <input type="text" placeholder="Sustantivo 2">
+                  <input type="text" placeholder="Adjetivo 2">
+                  <input type="text" placeholder="Sustantivo 3">
+                  <input type="text" placeholder="Adjetivo 3">
+                  <input type="text" placeholder="Sustantivo 4">
+                  <input type="text" placeholder="Adjetivo 4">
+                </div>
+              </div>
+              <button class="verificar">Verificar</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Viaje temporal</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="enunciado">
+              <p><strong>Ordena estos eventos clave en la historia de Barcelona a lo largo del tiempo:</strong></p>
+            </div>
+            <div class="dragdrop">
+              <div class="fechas">
+                <div class="dropzone" data-evento="Fundación de Barcino">Siglo I a.C.</div>
+                <div class="dropzone" data-evento="Construcción de murallas">Siglo IX-X</div>
+                <div class="dropzone" data-evento="Construcción catedral gótica">Siglo XV</div>
+                <div class="dropzone" data-evento="Modernismo">Años 1900-1914</div>
+                <div class="dropzone" data-evento="Guerra Civil española">Años 1936-39</div>
+                <div class="dropzone" data-evento="Juegos Olímpicos">Año 1992</div>
+              </div>
+              <div class="eventos">
+                <div class="draggable" draggable="true">Modernismo</div>
+                <div class="draggable" draggable="true">Fundación de Barcino</div>
+                <div class="draggable" draggable="true">Juegos Olímpicos</div>
+                <div class="draggable" draggable="true">Construcción catedral gótica</div>
+                <div class="draggable" draggable="true">Construcción de murallas</div>
+                <div class="draggable" draggable="true">Guerra Civil española</div>
+              </div>
+            </div>
+            <button id="comprobar">Verificar</button>
+          </div>
+        </section>
+
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: Espacios actuales</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="enunciado">
+              <p><strong>El Museu d’historia presenta diferentes espacios con importancia histórica por toda la ciudad de Barcelona. Ahora, con ayuda del mapa, nombra los espacios más famosos de la actualidad (de izquierda a derecha):</strong></p>
+            </div>
+            <div class="mapa">
+              <img src="../../../images/mapa.png" alt="Mapa Barcelona" usemap="#mapaBCN">
+              <map name="mapaBCN">
+                <area shape="circle" coords="95,100,15" href="#" data-img="../../../images/mapa nou.png" alt="Camp Nou">
+                <area shape="circle" coords="80,295,60" href="#" data-img="../../../images/mapa mont.jpg" alt="Montjuic">
+                <area shape="circle" coords="332,148,12" href="#" data-img="../../../images/mapa batllo.jpg" alt="Casa Batlló">
+                <area shape="circle" coords="340,270,20" href="#" data-img="../../../images/mapa gotic.jpg" alt="Barrio Gótico">
+                <area shape="circle" coords="372,304,12" href="#" data-img="../../../images/mapa maria.png" alt="Santa María del Mar">
+                <area shape="circle" coords="417,240,15" href="#" data-img="../../../images/mapa arco.jpg" alt="Arco de Triunfo">
+                <area shape="circle" coords="485,110,30" href="#" data-img="../../../images/mapa familia.png" alt="Sagrada Familia">
+                <area shape="circle" coords="560,195,12" href="#" data-img="../../../images/mapa torre.png" alt="Torre Glòries">
+              </map>
+            </div>
+            <div class="lugares">
+              <input type="text" placeholder="Espacio 1">
+              <input type="text" placeholder="Espacio 2">
+              <input type="text" placeholder="Espacio 3">
+              <input type="text" placeholder="Espacio 4">
+              <input type="text" placeholder="Espacio 5">
+              <input type="text" placeholder="Espacio 6">
+              <input type="text" placeholder="Espacio 7">
+              <input type="text" placeholder="Espacio 8">
+            </div>
+            <button class="verificar">Verificar</button>
+          </div>
+          <div id="popup">
+            <img id="popup-img" src="" alt="Lugar">
+            <button onclick="document.getElementById('popup').style.display='none'">X</button>
+          </div>
+        </section>
+
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Arquitectos por un día</h2>
+          <div class="bloque-actividad actividad-5">
+            <div class="enunciado">
+              <p><strong>Usa los siguientes iconos para dibujar tu propio templo.</strong></p>
+            </div>
+            <div class="contenedor-actividad">
+              <div class="panel">
+                <img src="../../../images/crea fronton.png" draggable="true">
+                <img src="../../../images/crea columna.png" draggable="true">
+                <img src="../../../images/crea puerta.png" draggable="true">
+                <img src="../../../images/crea escaleras.png" draggable="true">
+                <img src="../../../images/crea arco.png" draggable="true">
+                <img src="../../../images/crea estatua.png" draggable="true">
+              </div>
+              <div class="canvas" id="canvas">
+                <input type="text" placeholder="NOMBRE" name="palabra" required>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+            </div>
+            <ul>
+              <li>Cuando viajas a un país, ¿te interesa visitar y aprender cosas de su historia?</li>
+              <li>¿Qué recomiendas visitar a alguien que le interesa la historia de tu país?</li>
+              <li class="sin-punto"><input class="pais" type="text" placeholder="País"><input class="respuesta" type="text" placeholder="Recomiendo..."></li>
+            </ul>
+            <button id="agregar">Más</button>
+          </div>
+        </section>
+
+      </main>
+      <footer>
+        <p>© Expanish - Spanish in the City</p>
+      </footer>
+    </div>
+    <script src="../../../scripts/Historia/A0.js"></script>
   </body>
 </html>

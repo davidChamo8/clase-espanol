@@ -1,13 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Historia - A1</title>
+    <title>Historia - A1/2</title>
     <meta charset="UTF-8">
     <meta author="David Chamorro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/levels/Historia/stylesA1.css">
   </head>
   <body>
-    <h1>Prueba de estilo A1 - Historia</h1>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Historia - Nivel A1/2</h1>
+      <main>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+            </div>
+            <div class="preguntas">
+              <ul>
+                <li>¿Te gusta la historia?</li>
+                <li>¿Hay alguna época que te interesa especialmente?</li>
+                <li>¿Por qué es importante la memoria histórica?</li>
+                <li>¿Qué piensas de los museos? ¿Te gustan?</li>
+                <li>¿Cómo puede un museo atraer a los visitantes?</li>
+                <li>¿Has visitado alguna vez un espacio del MUHBA?</li>
+              </ul>
+            </div>
+            <div class="imagen-intro">
+              <img src="../../../images/catalunya.png" alt="Símbolo">
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: Bingo</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="enunciado">
+              <p><strong>Vamos a jugar al Bingo por grupos, cada uno tiene que elegir un ámbito de la historia. Cuando todas tus palabras son mencionadas, grita: ¡BINGO!</strong></p>
+            </div>
+            <div class="botones">
+              <button id="btn-palabra">Palabra</button>
+              <button id="btn-bingo">¡BINGO!</button>
+            </div>
+            <div class="resultados">
+              <div id="palabra-actual" style="margin-top:1rem; font-size:1.5rem; font-weight:bold;"></div>
+              <div id="lista-bingo" style="margin-top:1rem;"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: Para gustos, los colores</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="enunciado">
+              <p><strong>Según la información de estos espacios, elige uno que te gustaría visitar y explica por qué te interesa:</strong></p>
+            </div>
+            <div class="actividad-item">
+              <figure>
+                <img src="../../../images/rei.jpg" alt="Plaza del Rey">
+                <figcaption><strong>Plaça del Rei</strong></figcaption>
+              </figure>
+              <div class="content">
+                <input class="recuento" type="text" placeholder="Número de votos">
+                <textarea placeholder="¿Por qué?" name="opinion" required></textarea>
+              </div>
+            </div>
+            <div class="actividad-item">
+              <figure>
+                <img src="../../../images/guell.png" alt="Park Güell">
+                <figcaption><strong>Park Güell</strong></figcaption>
+              </figure>
+              <div class="content">
+                <input class="recuento" type="text" placeholder="Número de votos">
+                <textarea placeholder="¿Por qué?" name="opinion" required></textarea>
+              </div>
+            </div>
+            <div class="actividad-item">
+              <figure>
+                <img src="../../../images/turo.jpg" alt="Turó de la Rovira">
+                <figcaption><strong>Turó de la Rovira</strong></figcaption>
+              </figure>
+              <div class="content">
+                <input class="recuento" type="text" placeholder="Número de votos">
+                <textarea placeholder="¿Por qué?" name="opinion" required></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Imagen-respuesta</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="intro">
+              <p><strong>Responde las siguientes preguntas en relación a los espacios seleccionados:</strong></p>
+            </div>
+            <div class="enunciado">
+              <p><strong id="pregunta-texto"></strong></p>
+            </div>
+            <div class="opciones" id="opciones-container"></div>
+            <button id="btn-siguiente">Siguiente</button>
+          </div>
+        </section>  
+
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: ¿Verdad o mentira?</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="enunciado">
+              <p><strong>Decide si las siguientes afirmaciones son verdaderas o falsas:</strong></p>
+            </div>
+              <div class="frases">
+                <div class="pregunta" data-respuesta="v">
+                  <p>"Barcino fue una colonia fundada por los romanos en el siglo I a.C"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="f">
+                  <p>"El Park Güell fue diseñado como un parque público desde el inicio"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="f">
+                  <p>"El Turó de la Rovira fue utilizado durante la I Guerra Mundial"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="v">
+                  <p>"Actualmente puedes ver partes de la antigua muralla"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="f">
+                  <p>"El barrio gótico de Barcelona es de origen musulmán"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="v">
+                  <p>"El MUHBA tiene espacios por distintos puntos de la ciudad"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="v">
+                  <p>"En la catedral gótica viven 13 ocas"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+                <div class="pregunta" data-respuesta="f">
+                  <p>"Barcelona nunca ha tenido un barrio judío"</p>
+                  <button class="opcion">Verdadero</button>
+                  <button class="opcion">Falso</button>
+                </div>
+              </div>
+            <button id="comprobar">Verificar</button>
+            <p id="resultado"></p>
+          </div>
+        </section>
+
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Arquitectos por un día</h2>
+          <div class="bloque-actividad actividad-5">
+            <div class="enunciado">
+              <p><strong>Usa los siguientes iconos para dibujar tu propio templo.</strong></p>
+            </div>
+            <div class="contenedor-actividad">
+              <div class="panel">
+                <img src="../../../images/crea fronton.png" draggable="true">
+                <img src="../../../images/crea columna.png" draggable="true">
+                <img src="../../../images/crea puerta.png" draggable="true">
+                <img src="../../../images/crea escaleras.png" draggable="true">
+                <img src="../../../images/crea arco.png" draggable="true">
+                <img src="../../../images/crea estatua.png" draggable="true">
+              </div>
+              <div class="canvas" id="canvas">
+                <input type="text" placeholder="NOMBRE" name="palabra" required>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+            </div>
+            <ul>
+              <li>Cuando viajas a un país, ¿te interesa visitar y aprender cosas de su historia?</li>
+              <li>¿Qué recomiendas visitar a alguien que le interesa la historia de tu país?</li>
+              <li class="sin-punto"><input class="pais" type="text" placeholder="País"><input class="respuesta" type="text" placeholder="Recomiendo..."></li>
+            </ul>
+            <button id="agregar">Más</button>
+          </div>
+        </section>
+
+      </main>
+      <footer>
+        <p>© Expanish - Spanish in the City</p>
+      </footer>
+    </div>
+    <script src="../../../scripts/Historia/A1.js"></script>
   </body>
 </html>

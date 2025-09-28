@@ -465,6 +465,7 @@ footer {
 
 .texto p {
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .contenido {

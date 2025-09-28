@@ -317,11 +317,12 @@ footer {
   max-width: 300px;          
   margin: 10px auto;          
   padding: 8px 12px;
-  border: 1px solid #002b36;
+  border: 2px solid #002b36;
   border-radius: 8px;
   background: #b3ddca;
   cursor: pointer;
   text-align: center;
+  font-weight: bold;
 }
 
 .opcion:hover {
@@ -378,7 +379,6 @@ footer {
     width: 100%;
   }
 }
-
 
 /* ACTIVIDAD 5 */
 .actividad-5 p {
@@ -456,6 +456,8 @@ footer {
 
 .pizarra-controles canvas {
   margin-bottom: 10px;
+  background: #F5F5F5;
+  border: 2px solid #002b36;
 }
 
 .pizarra-controles > div {
@@ -491,7 +493,6 @@ footer {
   margin-right: 12px;
   cursor: pointer;
 }
-
 
 @media (max-width: 768px) {
   .pizarra-controles {

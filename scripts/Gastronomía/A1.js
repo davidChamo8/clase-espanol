@@ -218,7 +218,6 @@ document.getElementById("comprobar").addEventListener("click", () => {
     `${aciertos} de ${preguntas.length} preguntas acertadas`;
 });
 
-
 /* ACTIVIDAD 5 */
 const canvas = document.getElementById('pizarra');
 const ctx = canvas.getContext('2d');

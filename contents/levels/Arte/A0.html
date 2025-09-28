@@ -8,6 +8,222 @@
     <link rel="stylesheet" href="../../../style/levels/Arte/stylesA0.css">
   </head>
   <body>
-    <h1>Prueba de estilo A1 - Arte</h1>
+    <div class="contenedor">
+      <h1 class="titulo-modulo">Arte - Nivel A0</h1>
+      <main>
+
+        <section id="introduccion">
+          <h2 class="titulo-actividad">Entramos en materia</h2>
+          <div class="bloque-actividad actividad-intro">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+              <ul>
+                <li>¿Te interesa el arte?</li>
+                <li>¿Practicas alguna forma de arte?</li>
+                <li>¿Tienes un movimiento artístico favorito?</li>
+                <li>¿Te gusta visitar museos? ¿Has visitado algún museo en Barcelona?</li>
+                <li>¿Conces el MNAC?</li>
+                <li>¿Hay algún museo importante en tu ciudad/ país?</li>
+              </ul>
+            </div>
+            <div class="imagen-intro">
+              <img src="../../../images/jarron.png" alt="Jarrón">
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-1">
+          <h2 class="titulo-actividad">Actividad 1: Las 7 artes clásicas</h2>
+          <div class="bloque-actividad actividad-1">
+            <div class="enunciado">
+              <p><strong>Escribe el nombre de las siete artes clásicas y ordénalas según tu opinión personal.</strong></p>
+            </div>
+            <div class="contenedor-actividad">
+              <div class="imagenes">
+                <div class="item-imagen">
+                  <img src="../../../images/arquitectura.png" alt="Arquitectura">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/pintura.png" alt="Pintura">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/literatura.png" alt="Literatura">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/esculturap.png" alt="Escultura">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/danza.png" alt="Danza">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/musica.png" alt="Música">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+                <div class="item-imagen">
+                  <img src="../../../images/cine.png" alt="Cine">
+                  <input type="text" placeholder="" name="palabra1" required>
+                </div>
+              </div>
+              <div class="top-personal">
+                <p><strong>TOP GRUPAL:</strong></p>
+                <ol id="lista-top">
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                  <li class="drop-zone"></li>
+                </ol>
+              </div>
+              <div class="banco-palabras">
+                <p><strong>ARTES:</strong></p>
+                <div class="palabra" draggable="true">Danza</div>
+                <div class="palabra" draggable="true">Cine</div>
+                <div class="palabra" draggable="true">Música</div>
+                <div class="palabra" draggable="true">Escultura</div>
+                <div class="palabra" draggable="true">Arquitectura</div>
+                <div class="palabra" draggable="true">Literatura</div>
+                <div class="palabra" draggable="true">Pintura</div>
+              </div>
+            </div>
+            <div class="expansion">
+              <textarea placeholder="¿Qué otros artes piensas?" name="definicion" required></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-2">
+          <h2 class="titulo-actividad">Actividad 2: El edificio MNAC</h2>
+          <div class="bloque-actividad actividad-2">
+            <div class="enunciado">
+              <p><strong>Nombra las diferentes partes del edificio del museo en Montjuic.</strong></p>
+            </div>
+            <div class="contenido">
+              <div class="partes">
+                <div data-term="cupula">Cúpula Central</div>
+                <div data-term="fachada">Fachada</div>
+                <div data-term="jardines">Jardines</div>
+                <div data-term="torres">Torres Laterales</div>
+                <div data-term="columnas">Columnas</div>
+              </div>
+              <div class="huecos">
+                <img src="../../../images/edificio.png" alt="Edificio MNAC">
+                <input type="text" class="gap gap-1" size="8" placeholder="" style="font-weight: bold;">
+                <input type="text" class="gap gap-2" size="8" placeholder="" style="font-weight: bold;">
+                <input type="text" class="gap gap-3" size="8" placeholder="" style="font-weight: bold;">
+                <input type="text" class="gap gap-4" size="8" placeholder="" style="font-weight: bold;">
+                <input type="text" class="gap gap-5" size="8" placeholder="" style="font-weight: bold;">
+              </div>
+              <button id="check-btn">Comprobar respuestas</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-3">
+          <h2 class="titulo-actividad">Actividad 3: Historia del MNAC</h2>
+          <div class="bloque-actividad actividad-3">
+            <div class="enunciado">
+              <p><strong>Completa este texto sobre la historia del museo con los siguientes verbos en presente o infinitivo:</strong></p>
+            </div>
+            <div class="todo">
+              <div class="contenido">
+                <div class="banco-palabras-3">
+                  <div data-term="descubrir">descubrir</div>
+                  <div data-term="abrir">abrir</div>
+                  <div data-term="estar">estar</div>
+                  <div data-term="participar">participar</div>
+                  <div data-term="inaugurar">inaugurar</div>
+                  <div data-term="construir">construir</div>
+                  <div data-term="visitar">visitar</div>
+                  <div data-term="explorar">explorar</div>
+                  <div data-term="ofrecer">ofrecer</div>
+                  <div data-term="presentar">presentar</div>
+                </div>
+                <div class="audio">
+                  <audio controls width="100%" preload="metadata">
+                  <source src="../../../images/audio.mp4" type="audio/mp4">
+                </div>
+                <div class="texto">
+                  <p>El Museu Nacional d'Art de Catalunya (MNAC) <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> en el Palau Nacional de Montjuïc, que se <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> para la Exposición Internacional de 1929. En 1934 el museo <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> sus puertas y <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> la colección medieval. Más tarde, se <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> nuevas salas de arte románico.<br> En el museo, puedes <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> la mejor colección de pintura mural románica del mundo y a los artistas catalanes más representativos, como Gaudí o Casas. También <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> obras de arte gótico, de grandes pintores europeos del Renacimiento y del barroco, como Tiziano o Velázquez, y una colección de fotografía.<br> Se puede <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> tanto la colección como la historia del edificio para <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> sus secretos. Además, gracias a la organización de exposiciones temporales y actividades, puedes <input type="text" class="gap" size="8" placeholder="" style="font-weight: bold;"> en debates artísticos.</p>
+                </div>
+                <button id="check-btn">Comprobar respuestas</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="actividad-4">
+          <h2 class="titulo-actividad">Actividad 4: ¿Quién es quién?</h2>
+          <div class="bloque-actividad actividad-4">
+            <div class="enunciado">
+              <p><strong>Juega al juego ¿Quién es quién? con las diferentes figuras religiosas de estas imágenes y con el vocabulario descriptivo como ayuda.</strong></p>
+            </div>
+                <div class="tablero">
+                  <img src="../../../images/miguel.png" alt="Miguel" class="personaje">
+                  <img src="../../../images/esteban.png" alt="Esteban" class="personaje">
+                  <img src="../../../images/pablo.png" alt="Pablo" class="personaje">
+                  <img src="../../../images/bautista.png" alt="Bautista" class="personaje">
+                  <img src="../../../images/abad.png" alt="Abad" class="personaje">
+                  <img src="../../../images/domingo.png" alt="Domingo" class="personaje">
+                  <img src="../../../images/vicente.png" alt="Vicente" class="personaje">
+                  <img src="../../../images/jaime.png" alt="Jaime" class="personaje">
+                </div>
+                <div class="respuesta">
+                  <input type="password" id="nombre-secreto" placeholder="Nombre">
+                  <button id="toggle-vision">Mostrar</button>
+                </div>
+          </div>
+        </section>
+
+        <section id="actividad-5">
+          <h2 class="titulo-actividad">Actividad 5: Bestiario</h2>
+          <div class="bloque-actividad actividad-5">
+            <div class="enunciado">
+              <p><strong>Adivina qué animales se representan en las siguientes pinturas:</strong></p>
+            </div>
+            <div id="carousel-container">
+              <img id="carousel-image" src="" alt="Imagen del carrusel">
+              <div id="options-container"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflexion">
+          <h2 class="titulo-actividad">Reflexión</h2>
+          <div class="bloque-actividad reflexion">
+            <div class="enunciado">
+              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
+            </div>
+            <div class="columnass">
+              <div class="columna1">
+                <ul>
+                  <li>¿El arte es importante en tu vida? ¿Por qué?</li>
+                  <li>Define qué es el arte para tí en una línea:</li>
+                </ul>
+                <div class="definicion">
+                  <textarea placeholder="¿Qué es el arte?" name="definicion" required></textarea>
+                </div>
+              </div>
+              <div class="columna2">             
+                <div class="imagen-flx">
+                  <img src="../../../images/mnac.png" alt="Museo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <footer>
+        <p>© Expanish - Spanish in the City</p>
+      </footer>
+    </div>
+    <script src="../../../scripts/Arte/A0.js"></script>
   </body>
 </html>

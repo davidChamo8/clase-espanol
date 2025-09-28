@@ -1,106 +1,173 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <title>Arquitectura - B1/2</title>
-    <meta charset="UTF-8">
-    <meta author="David Chamorro">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style/levels/Arquitectura/stylesB1.css">
-  </head>
-  <body>
-    <div class="contenedor">
-      <h1 class="titulo-modulo">Arquitectura - Nivel B1/2</h1>
-      <main>
-        <section id="introduccion">
-          <h2 class="activity-title">Entramos en el tema</h2>
-          <div class="activity-block">
-            <div class="activity-content">
-              <p><strong>Responde y comenta estas preguntas con tus compañero/as:</strong></p>
-              <ul>
-                <li>¿Te interesa la arquitectura?</li>
-                <li>¿Te gusta la arquitectura de Barcelona?</li>
-                <li>¿Qué monumentos o edificios te gustan más de la ciudad?</li>
-                <li>¿Has visitado el interior de la Sagrada Familia? ¿Cumplió tus expectativas?</li>
-                <li>¿Te recuerda a algún otro edificio?</li>
-                <li>¿Te parece el monumento más importante de España?</li>
-                <li>¿Cuál piensas que es el monumento más importante de tu país? ¿Por qué?</li>
-              </ul>
-            </div>
-            <img src="../../../images/basilica.png" alt="Sagrada Familia" class="imagen-lateral">
-          </div>
-        </section>
+/* ACTIVIDAD 1*/
+document.querySelectorAll(
+  '.contenido-actividad-1, .contenido-actividad-2, .contenido-actividad-3'
+).forEach(bloque => {
+  const input = bloque.querySelector('.input-palabra');
+  const boton = bloque.querySelector('.boton-verificar');
+  const lista = bloque.querySelectorAll('.elementos-lista li');
 
-        <section id="actividad1">
-          <h2 class="activity-title">Actividad 1</h2>
-          <div class="activity-block">
-            <div class="match-container">
+  const contador = document.createElement('p');
+  contador.classList.add('contador');
+  contador.textContent = `Has encontrado 0/${lista.length}`;
+  bloque.appendChild(contador);
 
-              <div class="draggable-word-bank">
-                <div class="draggable" draggable="true" data-term="columna">Columna</div>
-                <div class="draggable" draggable="true" data-term="pinaculo">Pináculo</div>
-                <div class="draggable" draggable="true" data-term="arco">Arco</div>
-                <div class="draggable" draggable="true" data-term="escultura">Escultura</div>
-                <div class="draggable" draggable="true" data-term="relieve">Relieve</div>
-              </div>
+  let aciertos = 0;
 
-              <ol class="definition-list">
-                <li>
-                  Elemento arquitectónico vertical de soporte, normalmente cilíndrico.  
-                  <div class="drop-zone" data-answer="columna"></div>
-                </li>
-                <li>
-                  Elemento decorativo puntiagudo que corona torres o fachadas.  
-                  <div class="drop-zone" data-answer="pinaculo"></div>
-                </li>
-                <li>
-                  Estructura curva usada para cubrir un espacio entre dos puntos.  
-                  <div class="drop-zone" data-answer="arco"></div>
-                </li>
-                <li>
-                  Representación tridimensional de una figura, tallada o modelada.  
-                  <div class="drop-zone" data-answer="escultura"></div>
-                </li>
-                <li>
-                  Escultura sobre una superficie plana donde las figuras sobresalen.  
-                  <div class="drop-zone" data-answer="relieve"></div>
-                </li>
-              </ol>
-            </div>
-          </div>
+  function verificar() {
+    const valor = input.value.trim().toLowerCase();
+    let encontrado = false;
 
-          <div id="info-modal" class="modal hidden">
-            <div class="modal-content">
-              <span class="close-button">&times;</span>
-              <h3 id="modal-title"></h3>
-              <img id="modal-image" src="" alt="Ilustración del término">
-              <p id="modal-description"></p>
-            </div>
-          </div>
-        </section>
+    lista.forEach(li => {
+      if (valor === li.dataset.palabra.toLowerCase()) {
+        const span = li.querySelector('span');
+        if (span.classList.contains('oculto')) {
+          span.classList.remove('oculto');
+          span.style.color = "green";
+          span.style.fontWeight = "bold";
+          aciertos++;
+          contador.textContent = `Has encontrado ${aciertos}/${lista.length}`;
+        }
+        encontrado = true;
+      }
+    });
 
-        <section>
-          <h2 class="activity-title">Actividad 2</h2>
-          <div class="activity-block"></div>
-        </section>
+    if (!encontrado) {
+      input.classList.add('error');
+      setTimeout(() => input.classList.remove('error'), 800);
+    } else {
+      input.value = '';
+    }
+  }
 
-        <section>
-          <h2 class="activity-title">Actividad 3</h2>
-          <div class="activity-block"></div>
-        </section>
+  boton.addEventListener('click', verificar);
+  input.addEventListener('keypress', e => {
+    if (e.key === 'Enter') verificar();
+  });
+});
 
-        <section>
-          <h2 class="activity-title">Actividad 4</h2>
-          <div class="activity-block"></div>
-        </section>
+/* ACTIVIDAD 2 */
+const imagen = document.querySelector('.imagen-interiores');
+const modal = document.getElementById('modal-qr');
+const closeBtn = document.querySelector('.close-modal');
 
-        <section>
-          <h2 class="activity-title">Reflexión final</h2>
-          <div class="activity-block"></div>
-        </section>
-      </main>
-      <footer>
-        <p>© Expanish - Spanish in the City</p>
-      </footer>
-    </div>
-  </body>
-</html>
+imagen.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+/* ACTIVIDAD 4 */
+const zonaPegar = document.getElementById("zonaPegar");
+
+document.addEventListener("paste", (event) => {
+  const items = event.clipboardData.items;
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type.indexOf("image") !== -1) {
+      const file = items[i].getAsFile();
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        zonaPegar.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = event.target.result;
+        zonaPegar.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+});
+
+/* ACTIVIDAD 5 */
+const panelImgs = document.querySelectorAll('.panel img');
+const canvas = document.getElementById('canvas');
+
+panelImgs.forEach(img => {
+  img.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('src', e.target.src);
+  });
+});
+
+canvas.addEventListener('dragover', e => e.preventDefault());
+
+canvas.addEventListener('drop', e => {
+  e.preventDefault();
+  const src = e.dataTransfer.getData('src');
+  if (src) {
+    const newImg = document.createElement('div');
+    newImg.classList.add('draggable');
+    newImg.style.left = e.offsetX + 'px';
+    newImg.style.top = e.offsetY + 'px';
+
+    const image = document.createElement('img');
+    image.src = src;
+    image.style.width = "100px";
+    image.style.height = "auto";
+
+    const resizer = document.createElement('div');
+    resizer.classList.add('resizer');
+
+    newImg.appendChild(image);
+    newImg.appendChild(resizer);
+    canvas.appendChild(newImg);
+
+    makeDraggable(newImg);
+    makeResizable(newImg, resizer);
+  }
+});
+
+function makeDraggable(element) {
+  let offsetX, offsetY, isDragging = false;
+
+  element.addEventListener('mousedown', e => {
+    if (e.target.classList.contains('resizer')) return;
+    isDragging = true;
+    const rect = element.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const x = e.clientX - canvas.getBoundingClientRect().left - offsetX;
+    const y = e.clientY - canvas.getBoundingClientRect().top - offsetY;
+    element.style.left = x + 'px';
+    element.style.top = y + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+}
+
+function makeResizable(element, resizer) {
+  let isResizing = false;
+
+  resizer.addEventListener('mousedown', e => {
+    isResizing = true;
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isResizing) return;
+
+    const rect = element.getBoundingClientRect();
+    const img = element.querySelector('img');
+
+    const newWidth = e.clientX - rect.left;
+    const newHeight = e.clientY - rect.top;
+
+    if (newWidth > 20) img.style.width = newWidth + 'px';
+    if (newHeight > 20) img.style.height = newHeight + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isResizing = false;
+  });
+}
