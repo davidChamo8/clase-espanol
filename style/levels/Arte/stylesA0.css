@@ -216,6 +216,94 @@ ol {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .contenedor-actividad {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .item-imagen img {
+    width: 50px;
+    margin-right: 8px;
+  }
+
+  .palabra {
+    width: 150px;
+    font-size: 0.9rem;
+  }
+
+  .expansion textarea {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .item-imagen input {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-actividad {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .imagenes, .banco-palabras, .top-personal {
+    flex: unset;
+    width: 100%;
+  }
+
+  .imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .item-imagen {
+    width: 80%;
+    justify-content: flex-start;
+  }
+
+  .item-imagen img {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .item-imagen input {
+    width: 60%;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .banco-palabras {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .palabra {
+    width: 70%;
+    font-size: 0.9rem;
+  }
+
+  .expansion textarea {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  #lista-top {
+    gap: 10px;
+  }
+
+  .drop-zone {
+    min-height: 35px;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+}
+
 /*ACTIVIDAD 2*/
 .actividad-2 .enunciado p {
   margin-bottom: 2rem;
@@ -303,6 +391,67 @@ ol {
 #check-btn:hover {
   background-color: #7a91c6;
   color: #E0E0E0
+}
+
+@media (max-width: 1024px) {
+  .partes {
+    gap: 1.5rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .huecos input {
+    width: 100px;
+    height: 20px;
+    font-size: 0.9rem;
+    padding: 4px;
+  }
+
+  #check-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partes {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .huecos {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .huecos img {
+    width: 100%;
+    height: auto;
+  }
+
+  .huecos .gap {
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
+  .gap-1 { top: 8%; left: 30%; }
+  .gap-2 { top: 10.7%; left: 59.6%; }
+  .gap-3 { top: 46.8%; left: 31.8%; }
+  .gap-4 { top: 41.6%; left: 73.09%; }
+  .gap-5 { top: 64.5%; left: 42.8%; }
+
+  .huecos input {
+    width: 80px;
+    height: 20px;
+  }
+
+  #check-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }
 
 /* ACTIVIDAD 3 */
@@ -421,7 +570,6 @@ ol {
   }
 }
 
-
 /* ACTIVIDAD 4 */
 .actividad-4 .enunciado p {
   margin-bottom: 2rem;
@@ -477,6 +625,48 @@ ol {
 #toggle-vision:hover {
   background-color: #7a91c6;
   color: #E0E0E0
+}
+
+@media (max-width: 1024px) {
+  .tablero {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .personaje {
+    width: 100px;
+  }
+
+  #nombre-secreto,
+  #toggle-vision {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tablero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .personaje {
+    width: 80px;
+  }
+
+  .respuesta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #nombre-secreto,
+  #toggle-vision {
+    width: 80%;
+    max-width: 200px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }
 
 /*ACTIVIDAD 5*/
