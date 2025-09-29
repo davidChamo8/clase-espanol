@@ -219,92 +219,139 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ACTIVIDAD 5 */
-const panelImgs = document.querySelectorAll('.panel img');
-const canvas = document.getElementById('canvas');
+(function() {
+  const panelImgs = document.querySelectorAll('.panel img');
+  const canvas = document.getElementById('canvas');
 
-panelImgs.forEach(img => {
-  img.addEventListener('dragstart', e => {
-    e.dataTransfer.setData('src', e.target.src);
+  panelImgs.forEach(img => {
+    img.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('text/plain', e.target.src);
+      e.dataTransfer.effectAllowed = 'copy';
+    });
   });
-});
 
-canvas.addEventListener('dragover', e => e.preventDefault());
+  canvas.addEventListener('dragover', e => e.preventDefault());
 
-canvas.addEventListener('drop', e => {
-  e.preventDefault();
-  const src = e.dataTransfer.getData('src');
-  if (src) {
-    const newImg = document.createElement('div');
-    newImg.classList.add('draggable');
-    newImg.style.left = e.offsetX + 'px';
-    newImg.style.top = e.offsetY + 'px';
+  canvas.addEventListener('drop', e => {
+    e.preventDefault();
+    const src = e.dataTransfer.getData('text/plain') || e.dataTransfer.getData('src');
+    if (!src) return;
+
+    const placed = document.createElement('div');
+    placed.classList.add('placed-item');
+
+    const rect = canvas.getBoundingClientRect();
+    placed.style.left = (e.clientX - rect.left) + 'px';
+    placed.style.top  = (e.clientY - rect.top) + 'px';
 
     const image = document.createElement('img');
     image.src = src;
     image.style.width = "100px";
     image.style.height = "auto";
+    image.draggable = false;
+    image.alt = '';
 
     const resizer = document.createElement('div');
-    resizer.classList.add('resizer');
+    resizer.classList.add('placed-resizer');
 
-    newImg.appendChild(image);
-    newImg.appendChild(resizer);
-    canvas.appendChild(newImg);
+    placed.appendChild(image);
+    placed.appendChild(resizer);
+    canvas.appendChild(placed);
 
-    makeDraggable(newImg);
-    makeResizable(newImg, resizer);
+    makeDraggable(placed);
+    makeResizable(placed, resizer);
+  });
+
+  function makeDraggable(element) {
+    let offsetX = 0, offsetY = 0;
+
+    function onMouseDown(e) {
+      if (e.target.classList.contains('placed-resizer')) return;
+      e.preventDefault();
+
+      const rect = element.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    }
+
+    function onMouseMove(e) {
+      const canvasRect = canvas.getBoundingClientRect();
+
+      let x = e.clientX - canvasRect.left - offsetX;
+      let y = e.clientY - canvasRect.top - offsetY;
+
+      const maxX = canvas.clientWidth - element.offsetWidth;
+      const maxY = canvas.clientHeight - element.offsetHeight;
+      x = Math.max(0, Math.min(x, maxX));
+      y = Math.max(0, Math.min(y, maxY));
+
+      element.style.left = x + 'px';
+      element.style.top  = y + 'px';
+    }
+
+    function onMouseUp() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+
+    element.addEventListener('mousedown', onMouseDown);
   }
-});
 
-function makeDraggable(element) {
-  let offsetX, offsetY, isDragging = false;
+  function makeResizable(element, resizer) {
+    let startX = 0, startY = 0;
+    let startW = 0, startH = 0;
 
-  element.addEventListener('mousedown', e => {
-    if (e.target.classList.contains('resizer')) return;
-    isDragging = true;
-    const rect = element.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-  });
+    resizer.addEventListener('mousedown', startResize);
 
-  document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    const x = e.clientX - canvas.getBoundingClientRect().left - offsetX;
-    const y = e.clientY - canvas.getBoundingClientRect().top - offsetY;
-    element.style.left = x + 'px';
-    element.style.top = y + 'px';
-  });
+    function startResize(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const img = element.querySelector('img');
+      startX = e.clientX;
+      startY = e.clientY;
+      startW = img.getBoundingClientRect().width;
+      startH = img.getBoundingClientRect().height;
 
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-}
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    }
 
-function makeResizable(element, resizer) {
-  let isResizing = false;
+    function onMouseMove(e) {
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      const img = element.querySelector('img');
 
-  resizer.addEventListener('mousedown', e => {
-    isResizing = true;
-    e.preventDefault();
-  });
+      let newW = startW + dx;
+      let newH = startH + dy;
 
-  document.addEventListener('mousemove', e => {
-    if (!isResizing) return;
+      newW = Math.max(20, newW);
+      newH = Math.max(20, newH);
 
-    const rect = element.getBoundingClientRect();
-    const img = element.querySelector('img');
+      const canvasRect = canvas.getBoundingClientRect();
+      const elRect = element.getBoundingClientRect();
+      const offsetLeft = elRect.left - canvasRect.left;
+      const offsetTop  = elRect.top  - canvasRect.top;
 
-    const newWidth = e.clientX - rect.left;
-    const newHeight = e.clientY - rect.top;
+      const maxW = canvas.clientWidth - offsetLeft;
+      const maxH = canvas.clientHeight - offsetTop;
 
-    if (newWidth > 20) img.style.width = newWidth + 'px';
-    if (newHeight > 20) img.style.height = newHeight + 'px';
-  });
+      newW = Math.min(newW, maxW);
+      newH = Math.min(newH, maxH);
 
-  document.addEventListener('mouseup', () => {
-    isResizing = false;
-  });
-}
+      img.style.width = newW + 'px';
+      img.style.height = newH + 'px';
+    }
+
+    function onMouseUp() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+  }
+
+})();
 
 /* REFLEXIÓN */
 document.getElementById("agregar").addEventListener("click", function() {

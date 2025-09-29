@@ -530,37 +530,58 @@ figcaption.external-link {
 .panel img {
   width: 70px;
   cursor: grab;
+  user-select: none;
 }
 
 .canvas {
+  position: relative;
   border: 2px solid #002b36;
   width: 690px;
   height: 450px;
-  position: relative;
   background: #F5F5F5;
+  overflow: hidden; 
 }
 
-.draggable {
+.canvas .placed-item {
   position: absolute;
   cursor: move;
+  z-index: 50; 
+  display: inline-block;
+  touch-action: none;
+  user-select: none;
 }
 
-.resizer {
-  width: 5px;
-  height: 5px;
+.canvas .placed-item img {
+  display: block;
+  max-width: none;
+  pointer-events: none; 
+}
+
+.canvas .placed-resizer {
+  width: 12px;
+  height: 12px;
   background: #002b36;
   position: absolute;
-  right: -5px;
-  bottom: -5px;
+  right: -6px;
+  bottom: -6px;
   cursor: se-resize;
+  z-index: 60;
+  border-radius: 2px;
 }
 
 #canvas input {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  width: 666px;
+  width: 100%;
   padding: 10px;
   font-weight: bold;
-  margin-top: 411px;
+  border: none;
+  border-top: 2px solid #002b36;
+  background: #fff;
+  z-index: 10; 
 }
 
 @media (max-width: 992px) {

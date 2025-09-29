@@ -36,8 +36,8 @@ zonas.forEach(z => {
 /* ACTIVIDAD 2 */
 const respuestasCorrectas1 = ["Cúpula Central", "Torres Laterales", "Fachada", "Jardines", "Columnas"];
 
-document.getElementById('check-btn').addEventListener('click', () => {
-  const gaps = document.querySelectorAll('.gap');
+document.getElementById('check-btn-1').addEventListener('click', () => {
+  const gaps = document.querySelectorAll('.gap2');
   gaps.forEach((input, i) => {
     const userAnswer = input.value.trim().toLowerCase();
     if(userAnswer === respuestasCorrectas1[i].toLowerCase()) {
@@ -55,8 +55,8 @@ document.getElementById('check-btn').addEventListener('click', () => {
 /* ACTIVIDAD 3 */
 const respuestasCorrectas2 = ["está", "construye", "abre", "presenta", "inaugúran", "visitar", "ofrece", "explorar", "descubrir", "participar"];
 
-document.getElementById('check-btn').addEventListener('click', () => {
-  const gaps = document.querySelectorAll('.gap');
+document.getElementById('check-btn-2').addEventListener('click', () => {
+  const gaps = document.querySelectorAll('.gap3');
   gaps.forEach((input, i) => {
     const userAnswer = input.value.trim().toLowerCase();
     if(userAnswer === respuestasCorrectas2[i].toLowerCase()) {

@@ -327,7 +327,7 @@ ol {
   display: inline-block; 
 }
 
-.huecos .gap {
+.huecos .gap2 {
   position: absolute;
   font-weight: bold;
   padding: 2px;
@@ -376,7 +376,7 @@ ol {
   text-align: center;
 }
 
-#check-btn {
+#check-btn-1 {
   display: block;       
   margin: 15px auto 0 auto; 
   padding: 10px 20px;
@@ -388,7 +388,7 @@ ol {
   font-weight: bold;
 }
 
-#check-btn:hover {
+#check-btn-1:hover {
   background-color: #7a91c6;
   color: #E0E0E0
 }
@@ -407,7 +407,7 @@ ol {
     padding: 4px;
   }
 
-  #check-btn {
+  #check-btn-1 {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
@@ -432,7 +432,7 @@ ol {
     height: auto;
   }
 
-  .huecos .gap {
+  .huecos .gap2 {
     font-size: 0.8rem;
     padding: 2px;
   }
@@ -448,7 +448,7 @@ ol {
     height: 20px;
   }
 
-  #check-btn {
+  #check-btn-1 {
     font-size: 0.85rem;
     padding: 6px 12px;
   }
@@ -479,7 +479,7 @@ ol {
   text-align: justify;
 }
 
-.gap {
+.gap3 {
   font-weight: bold;
   text-align: center;
   padding: 2px;
@@ -506,7 +506,7 @@ ol {
   text-align: center;
 }
 
-#check-btn {
+#check-btn-2 {
   display: block;       
   margin: 15px auto 0 auto; 
   padding: 10px 20px;
@@ -518,7 +518,7 @@ ol {
   font-weight: bold;
 }
 
-#check-btn:hover {
+#check-btn-2:hover {
   background-color: #7a91c6;
   color: #E0E0E0
 }
@@ -543,7 +543,7 @@ ol {
     text-align: justify;
   }
 
-  .gap {
+  .gap3 {
     width: 100%; 
     font-size: 0.9rem;
   }
@@ -564,7 +564,7 @@ ol {
     font-size: 0.95rem;
   }
 
-  #check-btn {
+  #check-btn-2 {
     width: 90%;
     font-size: 0.95rem;
   }
