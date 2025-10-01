@@ -129,12 +129,13 @@ footer {
 .actividad-1 .enunciado p {
   text-align: justify;
   line-height: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 .bloque-actividad {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .columna {
@@ -514,6 +515,7 @@ figcaption.external-link {
 .contenedor-actividad {
   display: flex;
   gap: 20px;
+  margin-top: -20px;
 }
 
 .panel {
